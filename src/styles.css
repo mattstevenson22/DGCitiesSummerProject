@@ -1,0 +1,46 @@
+/* generic setup stuff */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* importing custom fonts */
+
+@font-face {
+    font-family: "Orienta"; /*a name to be used later*/
+    src: url("./fonts/Orienta-Regular.ttf"); /*URL to font*/
+}
+ 
+/* actual styles for components */
+
+.title {
+    font-size: 4vh;
+    font-family: "Orienta";
+    padding-top: 1vh; 
+    padding-bottom: 1vh;
+    padding-left: 1vw;
+    border-bottom: 4px solid red;
+}
+
+.main-console {
+    display: flex;
+    flex-grow: 1;
+}
+
+.filter-container {
+    width: 20vw;
+    border-right: 4px solid red;
+}
+
+.leaflet-container {
+    height: 100%;
+    width: 80vw;
+}
