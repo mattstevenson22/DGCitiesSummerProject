@@ -7,6 +7,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap} from "react-leaflet";
 import { Icon } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import axios from "axios";
+import InfoPopup from "./InfoPopup.jsx";
 
 //Asset imports
 import pin from "../images/red-pin.png";
@@ -22,13 +23,10 @@ export default function Map(){
       iconAnchor: [15, 30]
   });
 
+  const [buttonPopup, setButtonPopup] = useState(false);
+
   // create an empty array to store the complaint markers
   let complaint_markers = [];
-
-  // function that displays info box after button is pressed
-  const handleClick = () => {
- 
-  }
 
   // Markers component/function that maps the complaint markers array to actual marker components in react leaflet.
   function Markers({ data }) {
@@ -39,13 +37,12 @@ export default function Map(){
       data.map((marker) => {
         return (
           <Marker eventHandlers={{click: () => {map.setView(marker.geocode, 18)}}} position={marker.geocode} icon={customIcon}>
-            <Popup>{marker.popUp}</Popup>
+            <Popup >{marker.popUp} </Popup>
           </Marker>
         );
       })
     );
   }
-
 
 
   // // fetch complaint json data from backend server
@@ -86,29 +83,40 @@ export default function Map(){
 
 
   // iterate through each complaint in the JSON response and add a corresponding marker to the complaint markers array
-  for (let key in complaints_json) {
-    if (complaints_json.hasOwnProperty(key)) {
-        let complaint = complaints_json[key];
+  for (let c_key in complaints_json) {
+    if (complaints_json.hasOwnProperty(c_key)) {
+        let complaint = complaints_json[c_key];
         complaint_markers.push({
+        key: c_key,
         geocode: complaint.geocode,
-        popUp:  <> <h4> {complaint.address} </h4> <p> Category: {complaint.category} </p> <p> Summary: {complaint.summary} </p> <p> Sentiment: {complaint.sentiment} </p> <button onClick={handleClick}> See more </button> </>
+        popUp:  <> <h4> {complaint.address} </h4> <p> Category: {complaint.category} </p> <p> Summary: {complaint.summary} </p> <p> Sentiment: {complaint.sentiment} </p> <button onClick={() => {setButtonPopup(true)}}> See more </button> </>
       });
      }
   }
 
   return (
+    <>
+
     <MapContainer center={[51.476852, 0.005]} zoom={13.5}>
 
       <TileLayer
         attribution='&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url='https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png' />
 
-      <MarkerClusterGroup chunkedLoading>
+      
+
+      {/* <MarkerClusterGroup  chunkedLoading> */} 
 
         <Markers data={complaint_markers} />
 
-      </MarkerClusterGroup>
+      {/* </MarkerClusterGroup> */}
 
     </MapContainer>
+
+    <InfoPopup trigger={buttonPopup} />
+
+    </>
   );
 }
+
+// marker clustering has to be turned off for the pop up to work - needs sorting, but popup is top priority i think.
