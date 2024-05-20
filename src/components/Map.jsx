@@ -3,7 +3,7 @@ import "leaflet/dist/leaflet.css";
 
 //Component imports
 import {useState, useEffect } from "react"; 
-import { MapContainer, TileLayer, Marker, Popup} from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap} from "react-leaflet";
 import { Icon } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import axios from "axios";
@@ -15,8 +15,38 @@ import pin from "../images/red-pin.png";
 
 export default function Map(){
 
+  // marker icon
+  const customIcon = new Icon({
+      iconUrl: pin,
+      iconSize: [30, 30],
+      iconAnchor: [15, 30]
+  });
+
   // create an empty array to store the complaint markers
   let complaint_markers = [];
+
+  // function that displays info box after button is pressed
+  const handleClick = () => {
+ 
+  }
+
+  // Markers component/function that maps the complaint markers array to actual marker components in react leaflet.
+  function Markers({ data }) {
+
+    const map = useMap();
+
+    return (
+      data.map((marker) => {
+        return (
+          <Marker eventHandlers={{click: () => {map.setView(marker.geocode, 18)}}} position={marker.geocode} icon={customIcon}>
+            <Popup>{marker.popUp}</Popup>
+          </Marker>
+        );
+      })
+    );
+  }
+
+
 
   // // fetch complaint json data from backend server
   // async function fetchData() {
@@ -61,34 +91,21 @@ export default function Map(){
         let complaint = complaints_json[key];
         complaint_markers.push({
         geocode: complaint.geocode,
-        popUp:  <> <h4> {complaint.address} </h4> <p> Category: {complaint.category} </p> <p> Summary: {complaint.summary} </p> <p> Sentiment: {complaint.sentiment} </p> </>
+        popUp:  <> <h4> {complaint.address} </h4> <p> Category: {complaint.category} </p> <p> Summary: {complaint.summary} </p> <p> Sentiment: {complaint.sentiment} </p> <button onClick={handleClick}> See more </button> </>
       });
      }
   }
 
-  // marker icon
-  const customIcon = new Icon({
-    iconUrl: pin,
-    iconSize: [30, 30],
-    iconAnchor: [15, 30]
-  });
-
   return (
-    <MapContainer center = {[51.476852, 0.005]} zoom = {13.5}>
+    <MapContainer center={[51.476852, 0.005]} zoom={13.5}>
 
       <TileLayer
         attribution='&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url='https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png'
-      />
+        url='https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png' />
 
-      <MarkerClusterGroup
-        chunkedLoading>
+      <MarkerClusterGroup chunkedLoading>
 
-          {complaint_markers.map(marker => (
-            <Marker position={marker.geocode} icon={customIcon}>
-                <Popup>{marker.popUp}</Popup>
-            </Marker>
-         ))} 
+        <Markers data={complaint_markers} />
 
       </MarkerClusterGroup>
 
