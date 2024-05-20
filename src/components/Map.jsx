@@ -1,14 +1,14 @@
 //CSS imports
 import "leaflet/dist/leaflet.css";
 
-// component imports
+//Component imports
 import {useState, useEffect } from "react"; 
 import { MapContainer, TileLayer, Marker, Popup} from "react-leaflet";
 import { Icon } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import axios from "axios";
 
-//misc imports
+//Asset imports
 import pin from "../images/red-pin.png";
 
 // note to self: when giving a co-ordinate, latitude (north or south) comes before longitude (east or west).

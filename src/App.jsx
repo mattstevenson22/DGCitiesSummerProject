@@ -5,8 +5,6 @@ import "./styles.css";
 import MainConsole from "./components/MainConsole.jsx";
 import Title from "./components/Title.jsx";
 
-//Misc Imports
-
 
 
 export default function App(){
