@@ -7,7 +7,6 @@ import { MapContainer, TileLayer, Marker, Popup, useMap} from "react-leaflet";
 import { Icon } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import axios from "axios";
-import InfoPopup from "./InfoPopup.jsx";
 
 //Asset imports
 import pin from "../images/red-pin.png";
@@ -24,6 +23,8 @@ export default function Map(){
   });
 
   const [buttonPopup, setButtonPopup] = useState(false);
+
+  const [currentComplaintKey, setCurrentComplaintKey] = useState("");
 
   // create an empty array to store the complaint markers
   let complaint_markers = [];
@@ -43,6 +44,22 @@ export default function Map(){
       })
     );
   }
+
+  //functional component that displays more info about each complaint
+  function InfoPopup(props) {
+
+    let complaint_info = complaints_json[props.currentComplaintKey];
+
+    return (props.trigger) ? (
+      <div className="info-popup">
+        <div className="info-popup-inner">
+          <p> Name: {complaint_info.name} </p>
+          <p> Email: {complaint_info.email} </p>
+          <button className="close-btn" onClick={() => props.setTrigger(false)}>Close</button>
+        </div>
+      </div>
+    ) : "";
+}
 
 
   // // fetch complaint json data from backend server
@@ -89,7 +106,7 @@ export default function Map(){
         complaint_markers.push({
         key: c_key,
         geocode: complaint.geocode,
-        popUp:  <> <h4> {complaint.address} </h4> <p> Category: {complaint.category} </p> <p> Summary: {complaint.summary} </p> <p> Sentiment: {complaint.sentiment} </p> <button onClick={() => {setButtonPopup(true)}}> See more </button> </>
+        popUp:  <> <h4> {complaint.address} </h4> <p> Category: {complaint.category} </p> <p> Summary: {complaint.summary} </p> <p> Sentiment: {complaint.sentiment} </p> <button onClick={() => {setCurrentComplaintKey(c_key); setButtonPopup(true);}}> See more </button> </>
       });
      }
   }
@@ -104,7 +121,6 @@ export default function Map(){
         url='https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png' />
 
       
-
       {/* <MarkerClusterGroup  chunkedLoading> */} 
 
         <Markers data={complaint_markers} />
@@ -113,7 +129,7 @@ export default function Map(){
 
     </MapContainer>
 
-    <InfoPopup trigger={buttonPopup} />
+    <InfoPopup trigger={buttonPopup} setTrigger={setButtonPopup} currentComplaintKey={currentComplaintKey} />
 
     </>
   );
