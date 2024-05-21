@@ -53,8 +53,12 @@ export default function Map(){
     return (props.trigger) ? (
       <div className="info-popup">
         <div className="info-popup-inner">
-          <p> Name: {complaint_info.name} </p>
-          <p> Email: {complaint_info.email} </p>
+          <h3> {complaint_info.address} </h3>
+          <p> Category: {complaint_info.category} </p>
+          <p> Full Complaint: {complaint_info.full_complaint} </p>
+          <p> Date: {complaint_info.timestamp} </p>
+          <p> Sentiment: {complaint_info.sentiment} </p>
+          <p> Contact Info: {complaint_info.email}, {complaint_info.telephone} </p>
           <button className="close-btn" onClick={() => props.setTrigger(false)}>Close</button>
         </div>
       </div>
