@@ -2,7 +2,7 @@
 import "leaflet/dist/leaflet.css";
 
 //Component imports
-import {useState, useEffect } from "react"; 
+import {useState} from "react"; 
 import { MapContainer, TileLayer, Marker, Popup, useMap} from "react-leaflet";
 import { Icon } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
@@ -11,9 +11,18 @@ import axios from "axios";
 //Asset imports
 import pin from "../images/red-pin.png";
 
-// note to self: when giving a co-ordinate, latitude (north or south) comes before longitude (east or west).
-
 export default function Map(){
+
+  // ----- 1: Setup -----
+
+  // var to store the state of whether the extra info popup is shown or not
+  const [buttonPopup, setButtonPopup] = useState(false);
+
+  // var to store state of current complaint key for use in generating the extra info popup
+  const [currentComplaintKey, setCurrentComplaintKey] = useState("");
+
+  // create an empty array to store the complaint markers
+  let complaint_markers = [];
 
   // marker icon
   const customIcon = new Icon({
@@ -22,14 +31,9 @@ export default function Map(){
       iconAnchor: [15, 30]
   });
 
-  const [buttonPopup, setButtonPopup] = useState(false);
+  // ----- 2: Functional components used within this component -----
 
-  const [currentComplaintKey, setCurrentComplaintKey] = useState("");
-
-  // create an empty array to store the complaint markers
-  let complaint_markers = [];
-
-  // Markers component/function that maps the complaint markers array to actual marker components in react leaflet.
+  // Markers component that maps the complaint markers array to actual marker components in react leaflet.
   function Markers({ data }) {
 
     const map = useMap();
@@ -45,7 +49,7 @@ export default function Map(){
     );
   }
 
-  //functional component that displays more info about each complaint
+  //functional component that displays more info about each complaint in the popup window
   function InfoPopup(props) {
 
     let complaint_info = complaints_json[props.currentComplaintKey];
@@ -65,6 +69,8 @@ export default function Map(){
     ) : "";
 }
 
+
+  // ----- 3: Data Pipeline -----
 
   // // fetch complaint json data from backend server
   // async function fetchData() {
@@ -115,6 +121,8 @@ export default function Map(){
      }
   }
 
+  // ----- 4: return JSX -----
+
   return (
     <>
 
@@ -139,4 +147,9 @@ export default function Map(){
   );
 }
 
+
+
+
+// Notes:
+// when giving a co-ordinate, latitude (north or south) comes before longitude (east or west).
 // marker clustering has to be turned off for the pop up to work - needs sorting, but popup is top priority i think.
