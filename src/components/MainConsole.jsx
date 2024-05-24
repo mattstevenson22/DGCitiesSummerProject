@@ -1,3 +1,4 @@
+// Component Imports
 import FilterBar from "./FilterBar";
 import Map from "./Map";
 
