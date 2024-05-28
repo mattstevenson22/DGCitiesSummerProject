@@ -62,7 +62,8 @@ export default function Map(){
           <p className="BoxRegularText"> Full Complaint: {complaint_info.full_complaint} </p>
           <p className="BoxRegularText"> Date: {complaint_info.timestamp} </p>
           <p className="BoxRegularText"> Sentiment: {complaint_info.sentiment} </p>
-          <p className="BoxRegularText"> Contact Info: {complaint_info.email}, {complaint_info.telephone} </p>
+          <p className="BoxRegularText"> Email Address: {complaint_info.email} </p>
+          <p className="BoxRegularText"> Telephone: {complaint_info.telephone} </p>
           <button className="btn" onClick={() => props.setTrigger(false)}>Close</button>
         </div>
       </div>
