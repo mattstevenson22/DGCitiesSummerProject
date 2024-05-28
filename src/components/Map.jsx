@@ -57,13 +57,13 @@ export default function Map(){
     return (props.trigger) ? (
       <div className="info-popup">
         <div className="info-popup-inner">
-          <h3> {complaint_info.address} </h3>
-          <p> Category: {complaint_info.category} </p>
-          <p> Full Complaint: {complaint_info.full_complaint} </p>
-          <p> Date: {complaint_info.timestamp} </p>
-          <p> Sentiment: {complaint_info.sentiment} </p>
-          <p> Contact Info: {complaint_info.email}, {complaint_info.telephone} </p>
-          <button className="close-btn" onClick={() => props.setTrigger(false)}>Close</button>
+          <h3 className="BoxTitleText"> {complaint_info.address} </h3>
+          <p className="BoxRegularText"> Category: {complaint_info.category} </p>
+          <p className="BoxRegularText"> Full Complaint: {complaint_info.full_complaint} </p>
+          <p className="BoxRegularText"> Date: {complaint_info.timestamp} </p>
+          <p className="BoxRegularText"> Sentiment: {complaint_info.sentiment} </p>
+          <p className="BoxRegularText"> Contact Info: {complaint_info.email}, {complaint_info.telephone} </p>
+          <button className="btn" onClick={() => props.setTrigger(false)}>Close</button>
         </div>
       </div>
     ) : "";
@@ -116,7 +116,7 @@ export default function Map(){
         complaint_markers.push({
         key: c_key,
         geocode: complaint.geocode,
-        popUp:  <> <h4> {complaint.address} </h4> <p> Category: {complaint.category} </p> <p> Summary: {complaint.summary} </p> <p> Sentiment: {complaint.sentiment} </p> <button onClick={() => {setCurrentComplaintKey(c_key); setButtonPopup(true);}}> See more </button> </>
+        popUp:  <> <h4 className="PopupTitleText"> {complaint.address} </h4> <p className="PopupRegularText"> Category: {complaint.category} </p> <p className="PopupRegularText"> Summary: {complaint.summary} </p> <p className="PopupRegularText"> Sentiment: {complaint.sentiment} </p> <button className="btn" onClick={() => {setCurrentComplaintKey(c_key); setButtonPopup(true);}}> See more </button> </>
       });
      }
   }
