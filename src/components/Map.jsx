@@ -100,13 +100,52 @@ export default function Map(){
       timestamp: "blah",
       name: "obama",
       address: "64 Zoo Lane, SE10 8DX", 
-      geocode: [51.471, 0.014], 
+      geocode: [51.481, 0.014], 
       email: "blah",
       telephone: "120129412912",
       category: "Bins",
       summary: "There is no bin collection from my house at the moment.",
       sentiment: "Neutral"
-    }
+    },
+
+    complaint3: {
+      full_complaint: "blah",
+      timestamp: "blah",
+      name: "barack",
+      address: "123 Wallaby Way, SE10 8DX", 
+      geocode: [51.483, 0.04], 
+      email: "hello@hello.com",
+      telephone: "blah",
+      category: "Damp",
+      summary: "There is damp issues in the bathroom and kitchen.",
+      sentiment: "Negative"
+    },
+
+    complaint4: {
+      full_complaint: "blah",
+      timestamp: "blah",
+      name: "barack",
+      address: "123 Wallaby Way, SE10 8DX", 
+      geocode: [51.49, 0.03], 
+      email: "hello@hello.com",
+      telephone: "blah",
+      category: "Damp",
+      summary: "There is damp issues in the bathroom and kitchen.",
+      sentiment: "Negative"
+    },
+
+    complaint5: {
+      full_complaint: "blah",
+      timestamp: "blah",
+      name: "barack",
+      address: "123 Wallaby Way, SE10 8DX", 
+      geocode: [51.487, 0.007], 
+      email: "hello@hello.com",
+      telephone: "blah",
+      category: "Damp",
+      summary: "There is damp issues in the bathroom and kitchen.",
+      sentiment: "Negative"
+    },
   };
 
 
