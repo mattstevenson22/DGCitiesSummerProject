@@ -92,7 +92,7 @@ export default function Map(){
       telephone: "blah",
       category: "Damp",
       summary: "There is damp issues in the bathroom and kitchen.",
-      sentiment: "Moderately Negative"
+      sentiment: "Negative"
     },
 
     complaint2: {
@@ -105,7 +105,7 @@ export default function Map(){
       telephone: "120129412912",
       category: "Bins",
       summary: "There is no bin collection from my house at the moment.",
-      sentiment: "Mildy Negative"
+      sentiment: "Neutral"
     }
   };
 
@@ -114,13 +114,19 @@ export default function Map(){
   for (let c_key in complaints_json) {
     if (complaints_json.hasOwnProperty(c_key)) {
         let complaint = complaints_json[c_key];
-        complaint_markers.push({
-        key: c_key,
-        geocode: complaint.geocode,
-        popUp:  <> <h4 className="PopupTitleText"> {complaint.address} </h4> <p className="PopupRegularText"> Category: {complaint.category} </p> <p className="PopupRegularText"> Summary: {complaint.summary} </p> <p className="PopupRegularText"> Sentiment: {complaint.sentiment} </p> <button className="btn" onClick={() => {setCurrentComplaintKey(c_key); setButtonPopup(true);}}> See more </button> </>
+        if (true){ 
+            complaint_markers.push({
+            key: c_key,
+            geocode: complaint.geocode,
+            popUp:  <> <h4 className="PopupTitleText"> {complaint.address} </h4> <p className="PopupRegularText"> Category: {complaint.category} </p> <p className="PopupRegularText"> Summary: {complaint.summary} </p> <p className="PopupRegularText"> Sentiment: {complaint.sentiment} </p> <button className="btn" onClick={() => {setCurrentComplaintKey(c_key); setButtonPopup(true);}}> See more </button> </>
       });
-     }
-  }
+    }}}
+
+
+
+
+
+
 
   // ----- 4: return JSX -----
 
