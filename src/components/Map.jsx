@@ -55,7 +55,7 @@ export default function Map(){
     let complaint_info = complaints_json[props.currentComplaintKey];
 
     return (props.trigger) ? (
-      <div className="info-popup">
+      // <div className="info-popup">
         <div className="info-popup-inner">
           <h3 className="BoxTitleText"> {complaint_info.address} </h3>
           <p className="BoxRegularText"> Category: {complaint_info.category} </p>
@@ -66,7 +66,7 @@ export default function Map(){
           <p className="BoxRegularText"> Telephone: {complaint_info.telephone} </p>
           <button className="btn" onClick={() => props.setTrigger(false)}>Close</button>
         </div>
-      </div>
+      // </div>
     ) : "";
 }
 
@@ -114,7 +114,7 @@ export default function Map(){
   for (let c_key in complaints_json) {
     if (complaints_json.hasOwnProperty(c_key)) {
         let complaint = complaints_json[c_key];
-        if (true){ 
+        if (true){ //here is where i will add checking conditions to ensure only ones that match filters are rendered
             complaint_markers.push({
             key: c_key,
             geocode: complaint.geocode,
@@ -140,11 +140,11 @@ export default function Map(){
         url='https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png' />
 
       
-      {/* <MarkerClusterGroup  chunkedLoading> */} 
+      <MarkerClusterGroup chunkedLoading> 
 
         <Markers data={complaint_markers} />
 
-      {/* </MarkerClusterGroup> */}
+      </MarkerClusterGroup>
 
     </MapContainer>
 
