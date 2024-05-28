@@ -133,7 +133,7 @@ export default function Map(){
   return (
     <>
 
-    <MapContainer center={[51.476852, 0.005]} zoom={13.5}>
+    <MapContainer center={[51.476852, 0.015]} zoom={13.5}>
 
       <TileLayer
         attribution='&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

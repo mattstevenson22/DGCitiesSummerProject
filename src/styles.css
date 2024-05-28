@@ -86,13 +86,14 @@
 }
 
 .info-popup-inner {
-    position: relative;
+    position: fixed;
+    top: 7.5vh;
+    right: 0;
+    width: 20vw;
+    height: 100%;
     padding: 32px;
-    width: 100%;
-    max-width: 640px;
     background-color: white;
     z-index: 1000;
-
 }
 
 .PopupRegularText {
