@@ -40,6 +40,22 @@
     border-right: 4px solid red;
 }
 
+.filter {
+    margin-bottom: 10px;
+  }
+  
+  .filter label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .filter select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
 .leaflet-container {
     height: 100%;
     width: 80vw;
