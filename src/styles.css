@@ -12,6 +12,10 @@
     flex-direction: column;
 }
 
+p {
+    margin: 16px 0px;
+}
+
 /* ----- importing custom fonts ----- */
 
 @font-face {
