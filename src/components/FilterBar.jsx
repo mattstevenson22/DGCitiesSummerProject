@@ -63,7 +63,7 @@ export default function FilterBar() {
           <option value="old">Old</option>
         </select>
       </div>
-      <button onClick={updateMap}>Update Map</button>
+      <button className="btn" onClick={updateMap}>Update Map</button>
     </div>
   );
 }  
