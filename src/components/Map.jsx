@@ -2,7 +2,7 @@
 import "leaflet/dist/leaflet.css";
 
 //Component imports
-import {useState} from "react"; 
+import {useEffect, useState} from "react"; 
 import { MapContainer, TileLayer, Marker, Popup, useMap} from "react-leaflet";
 import { Icon } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
@@ -33,7 +33,7 @@ export default function Map(){
 
   // ----- 2: Functional components used within this component -----
 
-  // Markers component that maps the complaint markers array to actual marker components in react leaflet.
+  // maps the complaint markers array to actual marker components in react leaflet.
   function Markers({ data }) {
 
     const map = useMap();
@@ -41,7 +41,7 @@ export default function Map(){
     return (
       data.map((marker) => {
         return (
-          <Marker eventHandlers={{click: () => {map.setView(marker.geocode, 18)}}} position={marker.geocode} icon={customIcon}>
+          <Marker key={marker.key} eventHandlers={{click: () => {map.setView(marker.geocode, 18)}}} position={marker.geocode} icon={customIcon}>
             <Popup >{marker.popUp} </Popup>
           </Marker>
         );
@@ -49,7 +49,7 @@ export default function Map(){
     );
   }
 
-  //functional component that displays more info about each complaint in the popup window
+  // displays more info about each complaint in the popup window
   function InfoPopup(props) {
 
     let complaint_info = complaints_json[props.currentComplaintKey];
@@ -78,7 +78,7 @@ export default function Map(){
   //   const response = await axios.get("url")
   //   return response.data
   // }
-  // complaints_json = fetchData();
+  // let complaints_json = fetchData();
 
   //dummy complaints json for experimentation
   let complaints_json = {
@@ -119,33 +119,8 @@ export default function Map(){
       category: "Damp",
       summary: "There is damp issues in the bathroom and kitchen.",
       sentiment: "Negative"
-    },
-
-    complaint4: {
-      full_complaint: "blah",
-      timestamp: "blah",
-      name: "barack",
-      address: "123 Wallaby Way, SE10 8DX", 
-      geocode: [51.49, 0.03], 
-      email: "hello@hello.com",
-      telephone: "blah",
-      category: "Damp",
-      summary: "There is damp issues in the bathroom and kitchen.",
-      sentiment: "Negative"
-    },
-
-    complaint5: {
-      full_complaint: "blah",
-      timestamp: "blah",
-      name: "barack",
-      address: "123 Wallaby Way, SE10 8DX", 
-      geocode: [51.487, 0.007], 
-      email: "hello@hello.com",
-      telephone: "blah",
-      category: "Damp",
-      summary: "There is damp issues in the bathroom and kitchen.",
-      sentiment: "Negative"
-    },
+    }
+  
   };
 
 
@@ -160,12 +135,6 @@ export default function Map(){
             popUp:  <> <h4 className="PopupTitleText"> {complaint.address} </h4> <p className="PopupRegularText"> Category: {complaint.category} </p> <p className="PopupRegularText"> Summary: {complaint.summary} </p> <p className="PopupRegularText"> Sentiment: {complaint.sentiment} </p> <button className="btn" onClick={() => {setCurrentComplaintKey(c_key); setButtonPopup(true);}}> See more </button> </>
       });
     }}}
-
-
-
-
-
-
 
   // ----- 4: return JSX -----
 
