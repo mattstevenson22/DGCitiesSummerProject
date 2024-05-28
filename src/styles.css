@@ -1,4 +1,4 @@
-/* generic setup stuff */
+/* ----- generic setup stuff ----- */
 
 * {
     margin: 0;
@@ -12,14 +12,16 @@
     flex-direction: column;
 }
 
-/* importing custom fonts */
+/* ----- importing custom fonts ----- */
 
 @font-face {
     font-family: "Orienta"; /*a name to be used later*/
     src: url("./fonts/Orienta-Regular.ttf"); /*URL to font*/
 }
  
-/* actual styles for components */
+/* ----- actual styles for components ----- */
+
+/* Title bar section */
 
 .title {
     font-size: 4vh;
@@ -30,10 +32,14 @@
     border-bottom: 4px solid red;
 }
 
+/* Main console section (not very much needed here) */
+
 .main-console {
     display: flex;
     flex-grow: 1;
 }
+
+/* Filter Bar section */
 
 .filter-container {
     width: 20vw;
@@ -55,6 +61,11 @@
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+
+
+
+/* Map section */
+
 
 .leaflet-container {
     height: 100%;
