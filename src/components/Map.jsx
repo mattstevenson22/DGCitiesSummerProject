@@ -13,10 +13,29 @@ import pin from "../images/red-pin.png";
 
 export default function Map(){
 
-  // ----- 0: Fetch data from backend to begin -----
+  // ----- 1: Setup -----
+
+  // marker icon
+  const customIcon = new Icon({
+      iconUrl: pin,
+      iconSize: [30, 30],
+      iconAnchor: [15, 30]
+  });
+
+  // var to store the complaint data in json format
+  const [complaintsJson, setComplaintsJson] = useState(null);
+
+  // var to store the state of whether the extra info popup is shown or not
+  const [buttonPopup, setButtonPopup] = useState(false);
+
+  // var to store state of current complaint key for use in generating the extra info popup
+  const [currentComplaintKey, setCurrentComplaintKey] = useState("");
+  
+  // create an empty array to store the complaint markers (possibly change to state variable not sure)
+  let complaint_markers = [];
   
   //api url, change to our actual one
-  const apiUrl = "https://meowfacts.herokuapp.com/?id=3";
+  const apiUrl = "https://meowfacts.herokuapp.com/?id=14";
 
   //function that retrieves complaint data
   async function getComplaintData() {
@@ -33,24 +52,7 @@ export default function Map(){
     let experimentwithapi = getComplaintData();
     console.log(experimentwithapi);
   }, []);
-  
-  // ----- 1: Boilerplate Setup -----
 
-  // var to store the state of whether the extra info popup is shown or not
-  const [buttonPopup, setButtonPopup] = useState(false);
-
-  // var to store state of current complaint key for use in generating the extra info popup
-  const [currentComplaintKey, setCurrentComplaintKey] = useState("");
-
-  // create an empty array to store the complaint markers (possibly change to state variable not sure)
-  let complaint_markers = [];
-
-  // marker icon
-  const customIcon = new Icon({
-      iconUrl: pin,
-      iconSize: [30, 30],
-      iconAnchor: [15, 30]
-  });
 
   // ----- 2: Functional components used within this component -----
 

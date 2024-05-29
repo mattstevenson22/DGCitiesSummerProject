@@ -36,7 +36,7 @@ p {
     border-bottom: 4px solid red;
 }
 
-/* Main console section (not very much needed here) */
+/* Main console section */
 
 .main-console {
     display: flex;
