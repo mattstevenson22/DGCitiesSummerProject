@@ -2,18 +2,20 @@
 import "leaflet/dist/leaflet.css";
 
 //Component imports
-import {useEffect, useState} from "react"; 
 import { MapContainer, TileLayer, Marker, Popup, useMap} from "react-leaflet";
 import { Icon } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
-import api from '../api/complaints';
 
-//Asset imports
+//Misc imports
 import pin from "../images/red-pin.png";
+import {useEffect, useState} from "react";
+import api from '../api/complaints';
 
 export default function Map(){
 
+
   // ----- 1: Setup -----
+
 
   // marker icon
   const customIcon = new Icon({
@@ -33,7 +35,8 @@ export default function Map(){
   
   // create an empty array to store the complaint markers (possibly change to state variable not sure)
   let complaint_markers = [];
-  
+
+  // retrieve the complaint data from server
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -47,9 +50,8 @@ export default function Map(){
   }, [])
 
 
-
-
   // ----- 2: Functional components used within this component -----
+
 
   // maps the complaint markers array to actual marker components in react leaflet.
   function Markers({ data }) {
@@ -84,53 +86,10 @@ export default function Map(){
           <button className="btn" onClick={() => props.setTrigger(false)}>Close</button>
         </div>
     ) : "";
-}
+  }
 
 
-  // ----- 3: Data Pipeline -----
-
-  //dummy complaints json for experimentation
-  let complaints_json = {
-    complaint1: {
-      full_complaint: "blah",
-      timestamp: "blah",
-      name: "barack",
-      address: "123 Wallaby Way, SE10 8DX", 
-      geocode: [51.483, 0.0001], 
-      email: "hello@hello.com",
-      telephone: "blah",
-      category: "Damp",
-      summary: "There is damp issues in the bathroom and kitchen.",
-      sentiment: "Negative"
-    },
-
-    complaint2: {
-      full_complaint: "blah",
-      timestamp: "blah",
-      name: "obama",
-      address: "64 Zoo Lane, SE10 8DX", 
-      geocode: [51.481, 0.014], 
-      email: "blah",
-      telephone: "120129412912",
-      category: "Bins",
-      summary: "There is no bin collection from my house at the moment.",
-      sentiment: "Neutral"
-    },
-
-    complaint3: {
-      full_complaint: "blah",
-      timestamp: "blah",
-      name: "barack",
-      address: "123 Wallaby Way, SE10 8DX", 
-      geocode: [51.483, 0.04], 
-      email: "hello@hello.com",
-      telephone: "blah",
-      category: "Damp",
-      summary: "There is damp issues in the bathroom and kitchen.",
-      sentiment: "Negative"
-    }
-  
-  };
+  // ----- 3: Preparing the Complaint Markers Array -----
 
 
   // iterate through each complaint in the JSON response and add a corresponding marker to the complaint markers array
@@ -144,7 +103,9 @@ export default function Map(){
       });
     }}
 
+
   // ----- 4: return JSX -----
+
 
   return (
     <>
@@ -170,8 +131,5 @@ export default function Map(){
 }
 
 
-
-
 // Notes:
 // when giving a co-ordinate, latitude (north or south) comes before longitude (east or west).
-// marker clustering has to be turned off for the pop up to work - needs sorting, but popup is top priority i think.
