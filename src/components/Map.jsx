@@ -13,7 +13,28 @@ import pin from "../images/red-pin.png";
 
 export default function Map(){
 
-  // ----- 1: Setup -----
+  // ----- 0: Fetch data from backend to begin -----
+  
+  //api url, change to our actual one
+  const apiUrl = "https://meowfacts.herokuapp.com/?id=3";
+
+  //function that retrieves complaint data
+  async function getComplaintData() {
+    try {
+      const response = await axios.get(apiUrl);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  // call get complaint data and assign it to a variable.
+  useEffect(() => {
+    let experimentwithapi = getComplaintData();
+    console.log(experimentwithapi);
+  }, []);
+  
+  // ----- 1: Boilerplate Setup -----
 
   // var to store the state of whether the extra info popup is shown or not
   const [buttonPopup, setButtonPopup] = useState(false);
@@ -21,7 +42,7 @@ export default function Map(){
   // var to store state of current complaint key for use in generating the extra info popup
   const [currentComplaintKey, setCurrentComplaintKey] = useState("");
 
-  // create an empty array to store the complaint markers
+  // create an empty array to store the complaint markers (possibly change to state variable not sure)
   let complaint_markers = [];
 
   // marker icon
@@ -72,13 +93,6 @@ export default function Map(){
 
 
   // ----- 3: Data Pipeline -----
-
-  // // fetch complaint json data from backend server
-  // async function fetchData() {
-  //   const response = await axios.get("url")
-  //   return response.data
-  // }
-  // let complaints_json = fetchData();
 
   //dummy complaints json for experimentation
   let complaints_json = {
