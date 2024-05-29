@@ -142,13 +142,12 @@ export default function Map(){
   for (let c_key in complaints_json) {
     if (complaints_json.hasOwnProperty(c_key)) {
         let complaint = complaints_json[c_key];
-        if (true){ //here is where i will add checking conditions to ensure only ones that match filters are rendered
-            complaint_markers.push({
+        complaint_markers.push({
             key: c_key,
             geocode: complaint.geocode,
             popUp:  <> <h4 className="PopupTitleText"> {complaint.address} </h4> <p className="PopupRegularText"> Category: {complaint.category} </p> <p className="PopupRegularText"> Summary: {complaint.summary} </p> <p className="PopupRegularText"> Sentiment: {complaint.sentiment} </p> <button className="btn" onClick={() => {setCurrentComplaintKey(c_key); setButtonPopup(true);}}> See more </button> </>
       });
-    }}}
+    }}
 
   // ----- 4: return JSX -----
 
