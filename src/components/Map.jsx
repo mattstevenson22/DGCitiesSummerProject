@@ -6,7 +6,7 @@ import {useEffect, useState} from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap} from "react-leaflet";
 import { Icon } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
-import axios from "axios";
+import api from '../api/complaints';
 
 //Asset imports
 import pin from "../images/red-pin.png";
@@ -23,7 +23,7 @@ export default function Map(){
   });
 
   // var to store the complaint data in json format
-  const [complaintsJson, setComplaintsJson] = useState(null);
+  const [complaintsJson, setComplaintsJson] = useState({});
 
   // var to store the state of whether the extra info popup is shown or not
   const [buttonPopup, setButtonPopup] = useState(false);
@@ -34,24 +34,19 @@ export default function Map(){
   // create an empty array to store the complaint markers (possibly change to state variable not sure)
   let complaint_markers = [];
   
-  //api url, change to our actual one
-  const apiUrl = "https://meowfacts.herokuapp.com/?id=14";
-
-  //function that retrieves complaint data
-  async function getComplaintData() {
-    try {
-      const response = await axios.get(apiUrl);
-      return response.data;
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  // call get complaint data and assign it to a variable.
   useEffect(() => {
-    let experimentwithapi = getComplaintData();
-    console.log(experimentwithapi);
-  }, []);
+    const fetchData = async () => {
+      try {
+        const response = await api.get('/complaints');
+        setComplaintsJson(response.data);
+      } catch (err) {
+        console.log('Error: ${err.message}');
+      }
+    }
+    fetchData();
+  }, [])
+
+
 
 
   // ----- 2: Functional components used within this component -----
@@ -75,10 +70,9 @@ export default function Map(){
   // displays more info about each complaint in the popup window
   function InfoPopup(props) {
 
-    let complaint_info = complaints_json[props.currentComplaintKey];
+    let complaint_info = complaintsJson[props.currentComplaintKey];
 
     return (props.trigger) ? (
-      // <div className="info-popup">
         <div className="info-popup-inner">
           <h3 className="BoxTitleText"> {complaint_info.address} </h3>
           <p className="BoxRegularText"> Category: {complaint_info.category} </p>
@@ -89,7 +83,6 @@ export default function Map(){
           <p className="BoxRegularText"> Telephone: {complaint_info.telephone} </p>
           <button className="btn" onClick={() => props.setTrigger(false)}>Close</button>
         </div>
-      // </div>
     ) : "";
 }
 
@@ -141,9 +134,9 @@ export default function Map(){
 
 
   // iterate through each complaint in the JSON response and add a corresponding marker to the complaint markers array
-  for (let c_key in complaints_json) {
-    if (complaints_json.hasOwnProperty(c_key)) {
-        let complaint = complaints_json[c_key];
+  for (let c_key in complaintsJson) {
+    if (complaintsJson.hasOwnProperty(c_key)) {
+        let complaint = complaintsJson[c_key];
         complaint_markers.push({
             key: c_key,
             geocode: complaint.geocode,
@@ -155,7 +148,6 @@ export default function Map(){
 
   return (
     <>
-
     <MapContainer center={[51.476852, 0.015]} zoom={13.5}>
 
       <TileLayer
