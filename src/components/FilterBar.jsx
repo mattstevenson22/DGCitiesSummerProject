@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function FilterBar() {
+export default function FilterBar( {setFilterSelection}) {
   // State hooks for each filter
   const [sentiment, setSentiment] = useState('');
   const [progress, setProgress] = useState('');
@@ -12,6 +12,7 @@ export default function FilterBar() {
     // Logic to update the map based on filters
     console.log("Updating map with filters:");
     console.log({ sentiment, progress, category, actionedBy, age });
+    setFilterSelection("Sentiment:"+sentiment + "|Progress:"+progress+"|Category:"+category+"|Actioner:"+actionedBy+"|Age:"+age);
     // Update state and connect to the map
   };
 
