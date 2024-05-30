@@ -46,7 +46,7 @@ p {
 /* Filter Bar section */
 
 .filtertitle {
-    font-size: 25px;
+    font-size: 20px;
     font-family: "Orienta";
     padding-top: 1vh; 
     padding-bottom: 3vh;
@@ -63,7 +63,7 @@ p {
 
 .filter {
     margin-bottom: 15px;
-    font-size: 16px; 
+    font-size: 12px; 
     color: #333; 
     font-family: "orienta";
     margin-bottom: 20px;
@@ -72,7 +72,7 @@ p {
   .filter label {
     display: block;
     margin-bottom: 8px;
-    font-size: 20px; 
+    font-size: 16px; 
     font-family: "orienta";
   }
   
