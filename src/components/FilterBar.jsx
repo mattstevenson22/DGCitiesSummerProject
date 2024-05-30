@@ -9,11 +9,9 @@ export default function FilterBar( {setFilterSelection}) {
   const [age, setAge] = useState('');
 
   const updateMap = () => {
-    // Logic to update the map based on filters
     console.log("Updating map with filters:");
     console.log({ sentiment, progress, category, actionedBy, age });
-    setFilterSelection("Sentiment:"+sentiment + "|Progress:"+progress+"|Category:"+category+"|Actioner:"+actionedBy+"|Age:"+age);
-    // Update state and connect to the map
+    setFilterSelection("S:"+sentiment + "|P:"+progress+"|C:"+category+"|R:"+actionedBy+"|A:"+age);
   };
 
   return (

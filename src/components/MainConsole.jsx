@@ -5,7 +5,8 @@ import {useEffect, useState} from "react";
 
 export default function MainConsole() {
 
-  const [filterSelection, setFilterSelection] = useState("");
+  // state var to hold current filter selection
+  const [filterSelection, setFilterSelection] = useState("none");
 
   return (
     <div className="main-console">

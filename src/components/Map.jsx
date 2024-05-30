@@ -33,16 +33,16 @@ export default function Map( {filterSelection} ){
   // var to store state of current complaint key for use in generating the extra info popup
   const [currentComplaintKey, setCurrentComplaintKey] = useState("");
   
-  // create an empty array to store the complaint markers (possibly change to state variable not sure)
+  // create an empty array to store the complaint markers 
   let complaint_markers = [];
   
 
-  // retrieve the complaint data from server
+  // retrieve the complaint data from server whenever the filter selection changes
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await api.get("/complaints?filters="+filterSelection);
-        console.log("/complaints?filters="+filterSelection);
+        console.log("Sending Api Request: /complaints?filters="+filterSelection);
         setComplaintsJson(response.data);
       } catch (err) {
         console.log('Error: ${err.message}');
