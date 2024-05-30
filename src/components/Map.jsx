@@ -11,7 +11,7 @@ import pin from "../images/red-pin.png";
 import {useEffect, useState} from "react";
 import api from '../api/complaints';
 
-export default function Map(){
+export default function Map( {filterSelection} ){
 
 
   // ----- 1: Setup -----
@@ -35,19 +35,21 @@ export default function Map(){
   
   // create an empty array to store the complaint markers (possibly change to state variable not sure)
   let complaint_markers = [];
+  
 
   // retrieve the complaint data from server
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get('/complaints');
+        const response = await api.get("/complaints?filters="+filterSelection);
+        console.log("/complaints?filters="+filterSelection);
         setComplaintsJson(response.data);
       } catch (err) {
         console.log('Error: ${err.message}');
       }
     }
     fetchData();
-  }, [])
+  }, [filterSelection])
 
 
   // ----- 2: Functional components used within this component -----
