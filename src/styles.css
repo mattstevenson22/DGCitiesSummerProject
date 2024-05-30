@@ -48,10 +48,16 @@ p {
 .filter-container {
     width: 20vw;
     border-right: 4px solid red;
+    padding: 20px; 
+    box-sizing: border-box; 
+    background-color: #f8f8f8; 
 }
 
 .filter {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 16px; 
+    color: #333; 
+    font-family: "orienta"
   }
   
   .filter label {
@@ -61,9 +67,14 @@ p {
   
   .filter select {
     width: 100%;
-    padding: 8px;
+    padding: 10 px 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 15px; 
+    background-color: #fff; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    cursor: pointer; 
+    font-family: "orienta"
   }
 
 
