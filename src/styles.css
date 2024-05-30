@@ -183,12 +183,28 @@ p {
   }
 
 
-.CategoryText {
+.DampCategoryTag {
   background-color: orchid; 
   border-radius: 8px;
   padding: 4px 6px;
   text-align: center;
   margin: 4px 2px;
+}
+
+.BinCategoryTag {
+    background-color: gold; 
+    border-radius: 8px;
+    padding: 4px 6px;
+    text-align: center;
+    margin: 4px 2px;
+}
+
+.NeighbourCategoryTag {
+    background-color: lightblue; 
+    border-radius: 8px;
+    padding: 4px 6px;
+    text-align: center;
+    margin: 4px 2px;
 }
 
 .PositiveSentimentTag {

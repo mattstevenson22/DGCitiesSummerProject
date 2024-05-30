@@ -98,7 +98,19 @@ export default function Map( {filterSelection} ){
   for (let c_key in complaintsJson) {
     if (complaintsJson.hasOwnProperty(c_key)) {
         let complaint = complaintsJson[c_key];
+
+        let correctCategoryColour;
+
+        if ( complaint.category == "Damp" ) {
+          correctCategoryColour = "DampCategoryTag";
+        } else if (complaint.sentiment == "Bins") {
+          correctCategoryColour = "BinCategoryTag";
+        } else {
+          correctCategoryColour = "NeighbourCategoryTag";
+        }
+
         let correctSentimentColour;
+
         if ( complaint.sentiment == "Negative" ) {
           correctSentimentColour = "NegativeSentimentTag";
         } else if (complaint.sentiment == "Neutral") {
@@ -106,10 +118,11 @@ export default function Map( {filterSelection} ){
         } else {
           correctSentimentColour = "PositiveSentimentTag";
         }
+
         complaint_markers.push({
             key: c_key,
             geocode: complaint.geocode,
-            popUp:  <> <h4 className="PopupTitleText"> {complaint.address} </h4> <p className="PopupRegularText"> Category: <span className="CategoryText"> {complaint.category} </span> </p> <p className="PopupRegularText"> &#129668; Summary: {complaint.summary} </p> <p className="PopupRegularText"> &#129668; Sentiment: <span className={correctSentimentColour}> {complaint.sentiment} </span> </p> <button className="btn" onClick={() => {setCurrentComplaintKey(c_key); setButtonPopup(true);}}> See more </button> </>
+            popUp:  <> <h4 className="PopupTitleText"> {complaint.address} </h4> <p className="PopupRegularText"> Category: <span className={correctCategoryColour}> {complaint.category} </span> </p> <p className="PopupRegularText"> &#129668; Summary: {complaint.summary} </p> <p className="PopupRegularText"> &#129668; Sentiment: <span className={correctSentimentColour}> {complaint.sentiment} </span> </p> <button className="btn" onClick={() => {setCurrentComplaintKey(c_key); setButtonPopup(true);}}> See more </button> </>
       });
     }}
 
