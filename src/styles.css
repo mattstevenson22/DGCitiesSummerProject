@@ -182,3 +182,36 @@ p {
     color: white;
   }
 
+
+.CategoryText {
+  background-color: orchid; 
+  border-radius: 8px;
+  padding: 4px 6px;
+  text-align: center;
+  margin: 4px 2px;
+}
+
+.PositiveSentimentTag {
+    background-color: lightgreen; 
+    border-radius: 8px;
+    padding: 4px 6px;
+    text-align: center;
+    margin: 4px 2px;
+}
+
+.NeutralSentimentTag {
+    background-color: orange; 
+    border-radius: 8px;
+    padding: 4px 6px;
+    text-align: center;
+    margin: 4px 2px;
+}
+
+.NegativeSentimentTag {
+    background-color: red; 
+    border-radius: 8px;
+    padding: 4px 6px;
+    text-align: center;
+    margin: 4px 2px;
+}
+

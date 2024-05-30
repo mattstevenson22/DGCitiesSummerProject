@@ -79,10 +79,10 @@ export default function Map( {filterSelection} ){
     return (props.trigger) ? (
         <div className="info-popup-inner">
           <h3 className="BoxTitleText"> {complaint_info.address} </h3>
-          <p className="BoxRegularText"> Category: {complaint_info.category} </p>
+          <p className="BoxRegularText"> Category: <span className="CategoryText"> {complaint_info.category} </span> </p>
           <p className="BoxRegularText"> Full Complaint: {complaint_info.full_complaint} </p>
           <p className="BoxRegularText"> Date: {complaint_info.timestamp} </p>
-          <p className="BoxRegularText"> &#129668; Sentiment: {complaint_info.sentiment} </p>
+          <p className="BoxRegularText"> &#129668; Sentiment: <span className="SentimentText"> {complaint_info.sentiment} </span> </p>
           <p className="BoxRegularText"> Email Address: {complaint_info.email} </p>
           <p className="BoxRegularText"> Telephone: {complaint_info.telephone} </p>
           <button className="btn" onClick={() => props.setTrigger(false)}>Close</button>
@@ -98,10 +98,18 @@ export default function Map( {filterSelection} ){
   for (let c_key in complaintsJson) {
     if (complaintsJson.hasOwnProperty(c_key)) {
         let complaint = complaintsJson[c_key];
+        let correctSentimentColour;
+        if ( complaint.sentiment == "Negative" ) {
+          correctSentimentColour = "NegativeSentimentTag";
+        } else if (complaint.sentiment == "Neutral") {
+          correctSentimentColour = "NeutralSentimentTag";
+        } else {
+          correctSentimentColour = "PositiveSentimentTag";
+        }
         complaint_markers.push({
             key: c_key,
             geocode: complaint.geocode,
-            popUp:  <> <h4 className="PopupTitleText"> {complaint.address} </h4> <p className="PopupRegularText"> Category: {complaint.category} </p> <p className="PopupRegularText"> &#129668; Summary: {complaint.summary} </p> <p className="PopupRegularText"> &#129668; Sentiment: {complaint.sentiment} </p> <button className="btn" onClick={() => {setCurrentComplaintKey(c_key); setButtonPopup(true);}}> See more </button> </>
+            popUp:  <> <h4 className="PopupTitleText"> {complaint.address} </h4> <p className="PopupRegularText"> Category: <span className="CategoryText"> {complaint.category} </span> </p> <p className="PopupRegularText"> &#129668; Summary: {complaint.summary} </p> <p className="PopupRegularText"> &#129668; Sentiment: <span className={correctSentimentColour}> {complaint.sentiment} </span> </p> <button className="btn" onClick={() => {setCurrentComplaintKey(c_key); setButtonPopup(true);}}> See more </button> </>
       });
     }}
 
