@@ -76,7 +76,17 @@ export default function Map( {filterSelection} ){
 
     let complaint_info = complaintsJson[props.currentComplaintKey];
 
-    function getCorrectStyling(sentiment){
+    function getCorrectCategoryStyling(category){
+      if (category == "Damp" ) {
+        return "DampCategoryTag";
+      } else if (category == "Bins") {
+        return "BinCategoryTag";
+      } else {
+        return "NeighbourCategoryTag";
+      }
+    }
+
+    function getCorrectSentimentStyling(sentiment){
       if ( sentiment == "5" ) {
         return "NegativeSentimentTag";
       } else if ( sentiment == "4") {
@@ -94,10 +104,10 @@ export default function Map( {filterSelection} ){
     return (props.trigger) ? (
         <div className="additional-info-box">
           <h3 className="AddInfoBoxTitleText"> {complaint_info.address} </h3>
-          <p className="AddInfoBoxRegularText"> Category: <span className="CategoryText"> {complaint_info.category} </span> </p>
+          <p className="AddInfoBoxRegularText"> Category: <span className={getCorrectCategoryStyling(complaint_info.category)}> {complaint_info.category} </span> </p>
           <p className="AddInfoBoxRegularText"> Full Complaint: {complaint_info.full_complaint} </p>
           <p className="AddInfoBoxRegularText"> Date: {complaint_info.timestamp} </p>
-          <p className="AddInfoBoxRegularText"> &#129668; Sentiment: <span className={getCorrectStyling(complaint_info.sentiment)}> {complaint_info.sentiment} </span> </p>
+          <p className="AddInfoBoxRegularText"> &#129668; Sentiment: <span className={getCorrectSentimentStyling(complaint_info.sentiment)}> {complaint_info.sentiment} </span> </p>
           <p className="AddInfoBoxRegularText"> Email Address: {complaint_info.email} </p>
           <p className="AddInfoBoxRegularText"> Telephone: {complaint_info.telephone} </p>
           <button className="btn" onClick={() => props.setTrigger(false)}>Close</button>
