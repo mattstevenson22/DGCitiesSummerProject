@@ -33,7 +33,8 @@ p {
     padding-top: 1vh; 
     padding-bottom: 1vh;
     padding-left: 1vw;
-    border-bottom: 3px solid red;
+    border-bottom: 2px solid red;
+    background-color: #f8f8f8; 
 }
 
 /* Main console section */
@@ -55,7 +56,7 @@ p {
 
 .filter-container {
     width: 20vw;
-    border-right: 3px solid red;
+    border-right: 2px solid red;
     padding: 20px; 
     box-sizing: border-box; 
     background-color: #f8f8f8; 
