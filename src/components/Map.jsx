@@ -82,7 +82,7 @@ export default function Map( {filterSelection} ){
           <p className="BoxRegularText"> Category: {complaint_info.category} </p>
           <p className="BoxRegularText"> Full Complaint: {complaint_info.full_complaint} </p>
           <p className="BoxRegularText"> Date: {complaint_info.timestamp} </p>
-          <p className="BoxRegularText"> Sentiment: {complaint_info.sentiment} </p>
+          <p className="BoxRegularText"> &#129668; Sentiment: {complaint_info.sentiment} </p>
           <p className="BoxRegularText"> Email Address: {complaint_info.email} </p>
           <p className="BoxRegularText"> Telephone: {complaint_info.telephone} </p>
           <button className="btn" onClick={() => props.setTrigger(false)}>Close</button>
@@ -101,7 +101,7 @@ export default function Map( {filterSelection} ){
         complaint_markers.push({
             key: c_key,
             geocode: complaint.geocode,
-            popUp:  <> <h4 className="PopupTitleText"> {complaint.address} </h4> <p className="PopupRegularText"> Category: {complaint.category} </p> <p className="PopupRegularText"> Summary: {complaint.summary} </p> <p className="PopupRegularText"> Sentiment: {complaint.sentiment} </p> <button className="btn" onClick={() => {setCurrentComplaintKey(c_key); setButtonPopup(true);}}> See more </button> </>
+            popUp:  <> <h4 className="PopupTitleText"> {complaint.address} </h4> <p className="PopupRegularText"> Category: {complaint.category} </p> <p className="PopupRegularText"> &#129668; Summary: {complaint.summary} </p> <p className="PopupRegularText"> &#129668; Sentiment: {complaint.sentiment} </p> <button className="btn" onClick={() => {setCurrentComplaintKey(c_key); setButtonPopup(true);}}> See more </button> </>
       });
     }}
 
@@ -135,3 +135,5 @@ export default function Map( {filterSelection} ){
 
 // Notes:
 // when giving a co-ordinate, latitude (north or south) comes before longitude (east or west).
+
+// emoji options for ai stuff: wand, sparkle, robot?
