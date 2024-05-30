@@ -112,11 +112,141 @@ p {
 
 /* Map section */
 
+/* Generic */
+
+.btn {
+    background-color: white; 
+    border: 2px solid red;
+    color: black;
+    border-radius: 8px;
+    padding: 6px 12px;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    font-family: "orienta";
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+  
+.btn:hover {
+      background-color: red ;
+      color: white;
+}
+
+.DampCategoryTag {
+        background-color: lightblue; 
+        border-radius: 8px;
+        padding: 4px 6px;
+        text-align: center;
+        margin: 4px 2px;
+}
+      
+.BinCategoryTag {
+          background-color: gold; 
+          border-radius: 8px;
+          padding: 4px 6px;
+          text-align: center;
+          margin: 4px 2px;
+}
+      
+.NeighbourCategoryTag {
+          background-color: orchid; 
+          border-radius: 8px;
+          padding: 4px 6px;
+          text-align: center;
+          margin: 4px 2px;
+}
+      
+.PositiveSentimentTag {
+          background-color: chartreuse; 
+          border-radius: 8px;
+          padding: 4px 6px;
+          text-align: center;
+          margin: 4px 2px;
+}
+      
+.MildlyPositiveSentimentTag {
+          background-color: lightgreen; 
+          border-radius: 8px;
+          padding: 4px 6px;
+          text-align: center;
+          margin: 4px 2px;
+}
+      
+.NeutralSentimentTag {
+          background-color: coral; 
+          border-radius: 8px;
+          padding: 4px 6px;
+          text-align: center;
+          margin: 4px 2px;
+}
+      
+.MildlyNegativeSentimentTag {
+          background-color: orangered; 
+          border-radius: 8px;
+          padding: 4px 6px;
+          text-align: center;
+          margin: 4px 2px;
+}
+      
+.NegativeSentimentTag {
+          background-color: crimson; 
+          border-radius: 8px;
+          padding: 4px 6px;
+          text-align: center;
+          margin: 4px 2px;
+}
+
+/* Actual Map */
 
 .leaflet-container {
     height: 100%;
     width: 80vw;
 }
+
+/* Popup */
+
+.PopupRegularText {
+    font-family: "Orienta";
+    font-size: 13px;
+}
+
+.PopupTitleText {
+    font-family: "Orienta";
+    font-size: 14px;
+}
+
+/* Additional Info Box */
+
+.additional-info-box {
+    position: fixed;
+    top: 7.3vh;
+    right: 0;
+    width: 20vw;
+    height: 100%;
+    padding: 32px;
+    background-color: white;
+    z-index: 1000;
+}
+
+.AddInfoBoxRegularText {
+    font-family: "Orienta";
+    font-size: 14px;
+}
+
+.AddInfoBoxTitleText {
+    font-family: "Orienta";
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+/* Legacy:
 
 .info-popup {
     position: fixed;
@@ -131,119 +261,4 @@ p {
     z-index: 1000;
 }
 
-.info-popup-inner {
-    position: fixed;
-    top: 7.3vh;
-    right: 0;
-    width: 20vw;
-    height: 100%;
-    padding: 32px;
-    background-color: white;
-    z-index: 1000;
-}
-
-.PopupRegularText {
-    font-family: "Orienta";
-    font-size: 13px;
-}
-
-.PopupTitleText {
-    font-family: "Orienta";
-    font-size: 14px;
-}
-
-.BoxRegularText {
-    font-family: "Orienta";
-    font-size: 14px;
-}
-
-.BoxTitleText {
-    font-family: "Orienta";
-    font-size: 18px;
-}
-
-.btn {
-  background-color: white; 
-  border: 2px solid red;
-  color: black;
-  border-radius: 8px;
-  padding: 6px 12px;
-  text-align: center;
-  display: inline-block;
-  font-size: 14px;
-  font-family: "orienta";
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.btn:hover {
-    background-color: red ;
-    color: white;
-  }
-
-
-.DampCategoryTag {
-  background-color: orchid; 
-  border-radius: 8px;
-  padding: 4px 6px;
-  text-align: center;
-  margin: 4px 2px;
-}
-
-.BinCategoryTag {
-    background-color: gold; 
-    border-radius: 8px;
-    padding: 4px 6px;
-    text-align: center;
-    margin: 4px 2px;
-}
-
-.NeighbourCategoryTag {
-    background-color: lightblue; 
-    border-radius: 8px;
-    padding: 4px 6px;
-    text-align: center;
-    margin: 4px 2px;
-}
-
-.PositiveSentimentTag {
-    background-color: chartreuse; 
-    border-radius: 8px;
-    padding: 4px 6px;
-    text-align: center;
-    margin: 4px 2px;
-}
-
-.MildlyPositiveSentimentTag {
-    background-color: lightgreen; 
-    border-radius: 8px;
-    padding: 4px 6px;
-    text-align: center;
-    margin: 4px 2px;
-}
-
-.NeutralSentimentTag {
-    background-color: coral; 
-    border-radius: 8px;
-    padding: 4px 6px;
-    text-align: center;
-    margin: 4px 2px;
-}
-
-.MildlyNegativeSentimentTag {
-    background-color: orangered; 
-    border-radius: 8px;
-    padding: 4px 6px;
-    text-align: center;
-    margin: 4px 2px;
-}
-
-.NegativeSentimentTag {
-    background-color: crimson; 
-    border-radius: 8px;
-    padding: 4px 6px;
-    text-align: center;
-    margin: 4px 2px;
-}
-
+*/

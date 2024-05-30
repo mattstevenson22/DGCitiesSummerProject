@@ -92,14 +92,14 @@ export default function Map( {filterSelection} ){
     
 
     return (props.trigger) ? (
-        <div className="info-popup-inner">
-          <h3 className="BoxTitleText"> {complaint_info.address} </h3>
-          <p className="BoxRegularText"> Category: <span className="CategoryText"> {complaint_info.category} </span> </p>
-          <p className="BoxRegularText"> Full Complaint: {complaint_info.full_complaint} </p>
-          <p className="BoxRegularText"> Date: {complaint_info.timestamp} </p>
-          <p className="BoxRegularText"> &#129668; Sentiment: <span className={getCorrectStyling(complaint_info.sentiment)}> {complaint_info.sentiment} </span> </p>
-          <p className="BoxRegularText"> Email Address: {complaint_info.email} </p>
-          <p className="BoxRegularText"> Telephone: {complaint_info.telephone} </p>
+        <div className="additional-info-box">
+          <h3 className="AddInfoBoxTitleText"> {complaint_info.address} </h3>
+          <p className="AddInfoBoxRegularText"> Category: <span className="CategoryText"> {complaint_info.category} </span> </p>
+          <p className="AddInfoBoxRegularText"> Full Complaint: {complaint_info.full_complaint} </p>
+          <p className="AddInfoBoxRegularText"> Date: {complaint_info.timestamp} </p>
+          <p className="AddInfoBoxRegularText"> &#129668; Sentiment: <span className={getCorrectStyling(complaint_info.sentiment)}> {complaint_info.sentiment} </span> </p>
+          <p className="AddInfoBoxRegularText"> Email Address: {complaint_info.email} </p>
+          <p className="AddInfoBoxRegularText"> Telephone: {complaint_info.telephone} </p>
           <button className="btn" onClick={() => props.setTrigger(false)}>Close</button>
         </div>
     ) : "";
@@ -120,7 +120,7 @@ export default function Map( {filterSelection} ){
 
         if ( complaint.category == "Damp" ) {
           correctCategoryColour = "DampCategoryTag";
-        } else if (complaint.sentiment == "Bins") {
+        } else if (complaint.category == "Bins") {
           correctCategoryColour = "BinCategoryTag";
         } else {
           correctCategoryColour = "NeighbourCategoryTag";
