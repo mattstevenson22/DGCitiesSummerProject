@@ -172,7 +172,7 @@ export default function Map( {filterSelection} ){
         url='https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png' />
 
       
-      <MarkerClusterGroup chunkedLoading> 
+      <MarkerClusterGroup maxClusterRadius={30} chunkedLoading> 
 
         <Markers data={complaint_markers} />
 
