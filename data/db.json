@@ -10,18 +10,18 @@
             "telephone":"blah",
             "category":"Damp",
             "summary":"There is damp issues in the bathroom and kitchen.",
-            "sentiment":"Negative"
+            "sentiment":"4"
         },
         "complaint2":{
             "full_complaint":"blah",
             "timestamp":"blah",
             "name":"obama",
-            "address":"64 Zoo Lane, SE10 8DX",
+            "address":"19 Elthruda Rd, SE13 6SW",
             "geocode":[51.481,0.014],
             "email":"blah",
             "telephone":"120129412912",
             "category":"Bins",
             "summary":"There is no bin collection from my house at the moment.",
-            "sentiment":"Neutral"
+            "sentiment":"3"
         }
 }}

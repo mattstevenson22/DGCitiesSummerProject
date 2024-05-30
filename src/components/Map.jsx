@@ -99,6 +99,8 @@ export default function Map( {filterSelection} ){
     if (complaintsJson.hasOwnProperty(c_key)) {
         let complaint = complaintsJson[c_key];
 
+        //choose correct category styling
+
         let correctCategoryColour;
 
         if ( complaint.category == "Damp" ) {
@@ -108,13 +110,19 @@ export default function Map( {filterSelection} ){
         } else {
           correctCategoryColour = "NeighbourCategoryTag";
         }
-
+        
+        // choose correct sentiment styling
+        
         let correctSentimentColour;
 
-        if ( complaint.sentiment == "Negative" ) {
+        if ( complaint.sentiment == "5" ) {
           correctSentimentColour = "NegativeSentimentTag";
-        } else if (complaint.sentiment == "Neutral") {
+        } else if (complaint.sentiment == "4") {
+          correctSentimentColour = "MildlyNegativeSentimentTag";
+        } else if (complaint.sentiment == "3") {
           correctSentimentColour = "NeutralSentimentTag";
+        } else if (complaint.sentiment == "2") {
+          correctSentimentColour = "MildlyPositiveSentimentTag";
         } else {
           correctSentimentColour = "PositiveSentimentTag";
         }
@@ -122,7 +130,7 @@ export default function Map( {filterSelection} ){
         complaint_markers.push({
             key: c_key,
             geocode: complaint.geocode,
-            popUp:  <> <h4 className="PopupTitleText"> {complaint.address} </h4> <p className="PopupRegularText"> Category: <span className={correctCategoryColour}> {complaint.category} </span> </p> <p className="PopupRegularText"> &#129668; Summary: {complaint.summary} </p> <p className="PopupRegularText"> &#129668; Sentiment: <span className={correctSentimentColour}> {complaint.sentiment} </span> </p> <button className="btn" onClick={() => {setCurrentComplaintKey(c_key); setButtonPopup(true);}}> See more </button> </>
+            popUp:  <> <h4 className="PopupTitleText"> {complaint.address} </h4> <p className="PopupRegularText"> Category: <span className={correctCategoryColour}> {complaint.category} </span> </p> <p className="PopupRegularText"> &#129668; Summary: {complaint.summary} </p> <p className="PopupRegularText"> &#129668; Urgency: <span className={correctSentimentColour}> {complaint.sentiment} </span> </p> <button className="btn" onClick={() => {setCurrentComplaintKey(c_key); setButtonPopup(true);}}> See more </button> </>
       });
     }}
 
