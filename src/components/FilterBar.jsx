@@ -17,7 +17,7 @@ export default function FilterBar() {
 
   return (
     <div className="filter-container">
-      <h2>Filters</h2>
+      <h2 className = 'filtertitle'>Filters</h2>
       <div className="filter">
         <label htmlFor="sentiment">Sentiment</label>
         <select id="sentiment" value={sentiment} onChange={(e) => setSentiment(e.target.value)}>
@@ -63,7 +63,7 @@ export default function FilterBar() {
           <option value="old">Old</option>
         </select>
       </div>
-      <button className="btn" onClick={updateMap}>Update Map</button>
+      <button className="btn-update-map" onClick={updateMap}>Update Map</button>
     </div>
   );
 }  
