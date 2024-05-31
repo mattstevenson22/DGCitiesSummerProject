@@ -27,14 +27,41 @@ p {
 
 /* Title bar section */
 
+/* could redo this bit later to be a bit more mathematically precise and proper about placement of button etc */
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    border-bottom: 2px solid crimson; 
+  }
+
+
 .title {
     font-size: 4vh;
     font-family: "Orienta";
+    color: black;
     padding-top: 1vh; 
     padding-bottom: 1vh;
     padding-left: 1vw;
-    border-bottom: 2px solid crimson;
-    background-color: #f8f8f8; 
+    float: left;
+}
+
+.loginButton {
+    float:right;
+    margin-top: 3px;
+    margin-right: 5px;
+}
+
+.login-box {
+    position: fixed;
+    top: 8vh;
+    right: 1vw;
+    width: 15vw;
+    height: 40vh;
+    padding: 24px;
+    background-color: #f8f8f8;
+    z-index: 1001;
 }
 
 /* Main console section */
