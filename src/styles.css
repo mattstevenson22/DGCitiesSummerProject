@@ -33,7 +33,7 @@ p {
     padding-top: 1vh; 
     padding-bottom: 1vh;
     padding-left: 1vw;
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid crimson;
     background-color: #f8f8f8; 
 }
 
@@ -56,7 +56,7 @@ p {
 
 .filter-container {
     width: 20vw;
-    border-right: 2px solid red;
+    border-right: 2px solid crimson;
     padding: 20px; 
     box-sizing: border-box; 
     background-color: #f8f8f8; 
@@ -91,7 +91,7 @@ p {
 
   .btn-update-map {
     background-color: white; 
-    border: 2px solid red;
+    border: 2px solid crimson;
     color: black;
     border-radius: 8px;
     padding: 8px 14px;
@@ -105,7 +105,7 @@ p {
   }
   
   .btn-update-map:hover {
-      background-color: red ;
+      background-color: crimson ;
       color: white;
     }
 
@@ -117,7 +117,7 @@ p {
 
 .btn {
     background-color: white; 
-    border: 2px solid red;
+    border: 2px solid crimson;
     color: black;
     border-radius: 8px;
     padding: 6px 12px;
@@ -131,7 +131,7 @@ p {
 }
   
 .btn:hover {
-      background-color: red ;
+      background-color: crimson ;
       color: white;
 }
 
