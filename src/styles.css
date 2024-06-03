@@ -55,6 +55,7 @@ p {
 }
 
 .filter-container {
+    height: 100%;
     width: 20vw;
     border-right: 2px solid crimson;
     padding: 20px; 
@@ -109,6 +110,38 @@ p {
       color: white;
     }
 
+
+/* Navbar section */
+
+.navbarandmap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-container {
+    height: 7%;
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #f8f8f8;
+  }
+
+  li {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Orienta";
+  }
+  
+  li:hover {
+    background-color: #ddd;
+  }
 
 
 /* Map section */
@@ -202,7 +235,7 @@ p {
 /* Actual Map */
 
 .leaflet-container {
-    height: 100%;
+    height: 93%;
     width: 80vw;
 }
 
@@ -222,7 +255,7 @@ p {
 
 .additional-info-box {
     position: fixed;
-    top: 7vh;
+    top: 15vh;
     right: 0;
     width: 20vw;
     height: 100%;
@@ -240,6 +273,14 @@ p {
     font-family: "Orienta";
     font-size: 18px;
 }
+
+/* Dashboard Stuff */
+
+.dashboard-container {
+    height: 93%;
+    width: 80vw;
+}
+
 
 
 

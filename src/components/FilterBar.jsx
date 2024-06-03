@@ -22,9 +22,11 @@ export default function FilterBar( {setFilterSelection}) {
         <label htmlFor="sentiment">Sentiment</label>
         <select id="sentiment" value={sentiment} onChange={(e) => setSentiment(e.target.value)}>
           <option value="">Select</option>
-          <option value="positive">Positive</option>
-          <option value="neutral">Neutral</option>
-          <option value="negative">Negative</option>
+          <option value="5">5 (Most Urgent) </option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1 (Least Urgent) </option>
         </select>
       </div>
       <div className="filter">
@@ -40,9 +42,9 @@ export default function FilterBar( {setFilterSelection}) {
         <label htmlFor="category">Category</label>
         <select id="category" value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="">Select</option>
-          <option value="maintenance">Maintenance</option>
-          <option value="service">Service</option>
-          <option value="support">Support</option>
+          <option value="adultSocialCare">Adult Social Care</option>
+          <option value="business">Business</option>
+          <option value="childrensServices">Childrens Services</option>
         </select>
       </div>
       <div className="filter">

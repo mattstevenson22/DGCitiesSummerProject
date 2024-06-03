@@ -190,7 +190,6 @@ export default function Map( {filterSelection} ){
     </MapContainer>
 
     <InfoPopup trigger={buttonPopup} setTrigger={setButtonPopup} currentComplaintKey={currentComplaintKey} />
-
     </>
   );
 }

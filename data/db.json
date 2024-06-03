@@ -1,5 +1,5 @@
 {
-    "complaints": {
+    "data": {
         "complaint1": {
             "full_complaint": "insert full complaint here",
             "timestamp": "2024-05-30T10:00:00Z",
