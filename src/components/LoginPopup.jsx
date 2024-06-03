@@ -49,7 +49,7 @@ export default function LoginPopup(props) {
     <div className="login-box">
       {success ? (
         <>
-          <p> success </p>
+          <p> Success! You have successfully logged in. </p>
           <button className="login-close-btn" onClick={() => props.setTrigger(false)}>
             Close
           </button>
