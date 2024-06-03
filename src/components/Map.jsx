@@ -41,8 +41,16 @@ export default function Map( {filterSelection} ){
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get("/complaints?filters="+filterSelection);
-        console.log("Sending Api Request: /complaints?filters="+filterSelection);
+        const filterSelectionArray = filterSelection.split("|");
+        const urgency = filterSelectionArray[0];
+        const progress = filterSelectionArray[1];
+        const category = filterSelectionArray[2];
+        const responder = filterSelectionArray[3];
+        const age = filterSelectionArray[4];
+        const response = await api.get("/complaints?urgency="+urgency+"&progress="+progress+"&category="+category+"&responder="+responder+"&age="+age);
+        console.log("sending api req: /complaints?urgency="+urgency+"&progress="+progress+"&category="+category+"&responder="+responder+"&age="+age)
+        //  OLD: const response = await api.get("/complaints?filters="+filterSelection);
+        // OLD: console.log("Sending Api Request: /complaints?filters="+filterSelection);
         setComplaintsJson(response.data);
       } catch (err) {
         console.log('Error: ${err.message}');

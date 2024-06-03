@@ -11,7 +11,8 @@ export default function FilterBar( {setFilterSelection}) {
   const updateMap = () => {
     console.log("Updating map with filters:");
     console.log({ sentiment, progress, category, actionedBy, age });
-    setFilterSelection("S:"+sentiment + "|P:"+progress+"|C:"+category+"|R:"+actionedBy+"|A:"+age);
+    // OLD: setFilterSelection("S:"+sentiment + "|P:"+progress+"|C:"+category+"|R:"+actionedBy+"|A:"+age);
+    setFilterSelection(sentiment + "|"+progress+"|"+category+"|"+actionedBy+"|"+age);
   };
 
   return (
