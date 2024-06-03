@@ -5,8 +5,8 @@ export default function NavBar ( {setChosenView} ) {
     return (
         <div className='navbar-container'>
             <ul>
-                <li > <button onClick={ () => {setChosenView("dash")}}> dash view</button> </li>
-                <li > <button onClick={ () => {setChosenView("map")}}> map view</button> </li>
+                <li onClick={ () => {setChosenView("dash")}}> Dashboard View </li>
+                <li  onClick={ () => {setChosenView("map")}}> Map View </li>
             </ul>
         </div>
     );
