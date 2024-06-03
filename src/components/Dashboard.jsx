@@ -1,7 +1,7 @@
 export default function Title() {
     return (
       <div className="dashboard-container">
-        <p>im a dashboard wooho</p>
+        <p>hello im a dashboard</p>
       </div>
     );
   }

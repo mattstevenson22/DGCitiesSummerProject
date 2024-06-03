@@ -8,8 +8,6 @@ export default function ViewSelector( filterSelection) {
 
     const [chosenView, setChosenView] = useState("map");
 
-    console.log(chosenView);
-
     return (
         <div className="navbarandmap">
             <NavBar setChosenView = {setChosenView} />
