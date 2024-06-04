@@ -1,6 +1,7 @@
 import CountUp from "react-countup";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, Tooltip, Legend, ArcElement } from "chart.js";
+
 ChartJS.register(Tooltip, Legend, ArcElement); 
 
 export default function Dashboard() {
@@ -68,7 +69,7 @@ export default function Dashboard() {
           <p> Parks </p>
         </div>
 
-        <div className="dashboard-tile">
+        <div className="dashboard-tile2">
           <p> Complaints by Area: </p>
           <div className="piechart-container">
             <Pie data={areaPieChartData} options={options} />
@@ -86,7 +87,6 @@ export default function Dashboard() {
            <p> Number of complaints resolved in prev. month, relative to past months: </p>
            <p> i'm a bar chart </p>
         </div>
-
 
       </div>
     );
