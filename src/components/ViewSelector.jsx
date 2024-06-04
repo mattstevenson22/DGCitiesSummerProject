@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export default function ViewSelector( filterSelection) {
 
-    const [chosenView, setChosenView] = useState("map");
+    const [chosenView, setChosenView] = useState("dash");
 
     return (
         <div className="navbarandmap">

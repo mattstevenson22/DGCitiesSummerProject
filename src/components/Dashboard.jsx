@@ -1,10 +1,15 @@
-export default function Title() {
+import CountUp from "react-countup";
+
+
+export default function Dashboard() {
+
+    const totalNoOfComplaints = 1485
     return (
       <div className="dashboard-container">
-        
+
         <div className="dashtile-1">
            <p className="totalComplaintsHeader"> Total Number of Complaints: </p>
-           <p className="totalComplaintsValue"> 1485 </p> 
+           <CountUp className="totalComplaintsValue" end={totalNoOfComplaints} />
         </div>
 
         <div className="dashtile-2"> 
