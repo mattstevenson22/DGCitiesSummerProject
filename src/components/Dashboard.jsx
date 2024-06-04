@@ -1,7 +1,34 @@
 export default function Title() {
     return (
       <div className="dashboard-container">
-        <p>hello im a dashboard</p>
+        
+        <div className="dashtile-1">
+           <p className="totalComplaintsHeader"> Total Number of Complaints: </p>
+           <p className="totalComplaintsValue"> 1485 </p> 
+        </div>
+
+        <div className="dashtile-2"> 
+          <p> hello </p>
+        </div>
+
+        <div className="dashtile-3"> 
+          <p> insights! </p>
+        </div>
+
+        <div className="dashtile-4">
+          <p> look at me </p>
+        </div>
+
+        <div className="dashtile-5">
+          <p> woohooo </p>
+        </div>
+
+        <div className="dashtile-6">
+           <p> yay </p>
+        </div>
+
+
+
       </div>
     );
   }

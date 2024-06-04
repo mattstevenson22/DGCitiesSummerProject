@@ -279,7 +279,76 @@ ul {
 .dashboard-container {
     height: 93%;
     width: 80vw;
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-rows: 50% 50%;
 }
+
+.dashtile-1 {
+    font-family: "Orienta";
+    border: 1px solid crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.totalComplaintsHeader {
+    font-size: 16px;
+}
+
+.totalComplaintsValue {
+    font-size: 64px;
+}
+
+.dashtile-2 {
+    font-family: "Orienta";
+    border: 1px solid crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dashtile-3 {
+    font-family: "Orienta";
+    border: 1px solid crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dashtile-4 {
+    font-family: "Orienta";
+    border: 1px solid crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dashtile-5 {
+    font-family: "Orienta";
+    border: 1px solid crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dashtile-6 {
+    font-family: "Orienta";
+    border: 1px solid crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
 
 
 
