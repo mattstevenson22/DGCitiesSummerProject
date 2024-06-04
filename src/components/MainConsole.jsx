@@ -4,15 +4,16 @@ import Dashboard from "./Dashboard";
 import { useState } from "react";
 import FilterBar from "./FilterBar";
 
-export default function ViewSelector() {
+export default function MainConsole() {
 
+  // state var to hold current chosen view
   const [chosenView, setChosenView] = useState("dashboard");
 
   // state var to hold current filter selection
   const [filterSelection, setFilterSelection] = useState("||||");
 
   return (
-    <div className="viewselector">
+    <div className="main-console">
 
       <NavBar setChosenView={setChosenView} />
 

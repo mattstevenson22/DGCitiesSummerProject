@@ -49,40 +49,40 @@ export default function Dashboard() {
     return (
       <div className="dashboard-container">
 
-        <div className="dashtile">
-           <p className="totalComplaintsHeader"> Total Number of Complaints: </p>
-           <CountUp className="totalComplaintsValue" end={totalNoOfComplaints} />
+        <div className="dashboard-tile">
+           <p className="total-complaints-header"> Total Number of Complaints: </p>
+           <CountUp className="total-complaints-value" end={totalNoOfComplaints} />
         </div>
 
-        <div className="dashtile"> 
+        <div className="dashboard-tile"> 
           <p> Complaints by Category: </p>
           <div className="piechart-container">
             <Pie data={categoryPieChartData} options={options} />
           </div>
         </div>
 
-        <div className="dashtile"> 
+        <div className="dashboard-tile"> 
           <p> Category with the <span className="bad"> most </span> complaints in prev. month: </p>
           <p> Damp </p>
           <p> Category with the <span className="good"> least </span> complaints in prev. month: </p>
           <p> Parks </p>
         </div>
 
-        <div className="dashtile">
+        <div className="dashboard-tile">
           <p> Complaints by Area: </p>
           <div className="piechart-container">
             <Pie data={areaPieChartData} options={options} />
           </div>
         </div>
 
-        <div className="dashtile">
+        <div className="dashboard-tile">
           <p> Area with the <span className="bad"> most </span> complaints in prev. month: </p>
           <p> Woolwich </p>
           <p> Area with the <span className="good"> least </span> complaints in prev. month: </p>
           <p> Blackheath </p>
         </div>
 
-        <div className="dashtile">
+        <div className="dashboard-tile">
            <p> Number of complaints resolved in prev. month, relative to past months: </p>
            <p> i'm a bar chart </p>
         </div>

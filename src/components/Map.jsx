@@ -41,17 +41,14 @@ export default function Map( {filterSelection} ){
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const filterSelectionArray = filterSelection.split("|");
-        // const urgency = filterSelectionArray[0];
-        // const progress = filterSelectionArray[1];
-        // const category = filterSelectionArray[2];
-        // const responder = filterSelectionArray[3];
-        // const age = filterSelectionArray[4];
-        // const response = await api.get("/complaints?urgency="+urgency+"&progress="+progress+"&category="+category+"&responder="+responder+"&age="+age);
-        // console.log("sending api req: /complaints?urgency="+urgency+"&progress="+progress+"&category="+category+"&responder="+responder+"&age="+age)
-        const response = await api.get("/data");
-        console.log("Sending Api Request...");
-        console.log(response.data);
+        const filterSelectionArray = filterSelection.split("|");
+        const urgency = filterSelectionArray[0];
+        const progress = filterSelectionArray[1];
+        const category = filterSelectionArray[2];
+        const responder = filterSelectionArray[3];
+        const age = filterSelectionArray[4];
+        const response = await api.get("/data?urgency="+urgency+"&progress="+progress+"&category="+category+"&responder="+responder+"&age="+age);
+        console.log("Sending api request: /data?urgency="+urgency+"&progress="+progress+"&category="+category+"&responder="+responder+"&age="+age)
         setComplaintsJson(response.data);
       } catch (err) {
         console.log('Unsuccessful Request');
@@ -87,25 +84,25 @@ export default function Map( {filterSelection} ){
 
     function getCorrectCategoryStyling(category){
       if (category == "Damp" ) {
-        return "DampCategoryTag";
+        return "damp-category-tag";
       } else if (category == "Bins") {
-        return "BinCategoryTag";
+        return "bin-category-tag";
       } else {
-        return "NeighbourCategoryTag";
+        return "neighbour-category-tag";
       }
     }
 
     function getCorrectSentimentStyling(sentiment){
       if ( sentiment == "5" ) {
-        return "NegativeSentimentTag";
+        return "negative-sentiment-tag";
       } else if ( sentiment == "4") {
-        return "MildlyNegativeSentimentTag";
+        return "mildly-negative-sentiment-tag";
       } else if ( sentiment == "3") {
-        return "NeutralSentimentTag";
+        return "neutral-sentiment-tag";
       } else if (sentiment == "2") {
-        return "MildlyPositiveSentimentTag";
+        return "mildly-positive-sentiment-tag";
       } else {
-        return "PositiveSentimentTag";
+        return "positive-sentiment-tag";
       }
     }
     
@@ -197,5 +194,3 @@ export default function Map( {filterSelection} ){
 
 // Notes:
 // when giving a co-ordinate, latitude (north or south) comes before longitude (east or west).
-
-// emoji options for ai stuff: wand, sparkle, robot?

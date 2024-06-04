@@ -1,322 +1,318 @@
 /* ----- generic setup stuff ----- */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #root {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 p {
-    margin: 16px 0px;
+  margin: 16px 0px;
 }
 
 /* ----- importing custom fonts ----- */
 
 @font-face {
-    font-family: "Orienta"; /*a name to be used later*/
-    src: url("./fonts/Orienta-Regular.ttf"); /*URL to font*/
+  font-family: "Orienta"; /*a name to be used later*/
+  src: url("./fonts/Orienta-Regular.ttf"); /*URL to font*/
 }
- 
+
 /* ----- actual styles for components ----- */
 
 /* Title bar section */
 
 .title {
-    font-size: 4vh;
-    font-family: "Orienta";
-    padding-top: 1vh; 
-    padding-bottom: 1vh;
-    padding-left: 1vw;
-    border-bottom: 2px solid crimson;
-    background-color: #f8f8f8; 
-    margin: 0;
+  font-size: 4vh;
+  font-family: "Orienta";
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-left: 1vw;
+  border-bottom: 2px solid crimson;
+  background-color: #f8f8f8;
+  margin: 0;
 }
 
 /* View Selector Section */
 
-.viewselector {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+.main-console {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .filterandmap-container {
-    width:100vw;
-    height:100%;
-    display:flex;
+  width: 100vw;
+  height: 100%;
+  display: flex;
 }
 
 /* Navbar section */
 
 .navbar-container {
-    width: 100%;
-    border-bottom: 2px solid crimson;
-    background-color: #f8f8f8;
+  width: 100%;
+  border-bottom: 2px solid crimson;
+  background-color: #f8f8f8;
 }
 
 ul {
-    list-style-type: none;
-  }
+  list-style-type: none;
+}
 
-  li {
-    float: left;
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    cursor: pointer;
-    font-family: "Orienta";
-  }
-  
-  li:hover {
-    background-color: #ddd;
-  }
+li {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: "Orienta";
+}
 
+li:hover {
+  background-color: #ddd;
+}
 
 /* Dashboard */
 
 .dashboard-container {
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 33.33% 33.33% 33.33%;
-    grid-template-rows: 50% 50%;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-rows: 50% 50%;
 }
 
-.dashtile {
-    font-family: "Orienta";
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* border: 1px solid black; */
-    text-align: center;
+.dashboard-tile {
+  font-family: "Orienta";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  text-align: center;
 }
 
-.totalComplaintsHeader {
-    font-size: 16px;
+.total-complaints-header {
+  font-size: 16px;
 }
 
-.totalComplaintsValue {
-    font-size: 64px;
+.total-complaints-value {
+  font-size: 64px;
 }
 
 .piechart-container {
-    height: 65%;
-    width: 65%;
+  height: 65%;
+  width: 65%;
 }
 
 .good {
-    color: chartreuse;
-    font-weight: bold;
+  color: chartreuse;
+  font-weight: bold;
 }
 
 .bad {
-    color: red;
-    font-weight: bold;
+  color: red;
+  font-weight: bold;
 }
-
 
 /* Map and Filters section */
 
-
 /* Filter Bar */
 
-.filtertitle {
-    font-size: 20px;
-    font-family: "Orienta";
-    padding-top: 1vh; 
-    padding-bottom: 3vh;
-   
+.filter-title {
+  font-size: 20px;
+  font-family: "Orienta";
+  padding-top: 1vh;
+  padding-bottom: 3vh;
 }
 
 .filter-container {
-    height: 100%;
-    width: 20%;
-    border-right: 2px solid crimson;
-    padding: 20px; 
-    box-sizing: border-box; 
-    background-color: #f8f8f8; 
+  height: 100%;
+  width: 20%;
+  border-right: 2px solid crimson;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
 }
 
 .filter {
-    margin-bottom: 15px;
-    font-size: 12px; 
-    color: #333; 
-    font-family: "orienta";
-    margin-bottom: 20px;
-  }
-  
-  .filter label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 16px; 
-    font-family: "orienta";
-  }
-  
-  .filter select {
-    width: 100%;
-    padding: 7px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 15px; 
-    background-color: #fff; 
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
-    cursor: pointer; 
-    font-family: "orienta";
-  }
+  margin-bottom: 15px;
+  font-size: 12px;
+  color: #333;
+  font-family: "orienta";
+  margin-bottom: 20px;
+}
 
-  .btn-update-map {
-    background-color: white; 
-    border: 2px solid crimson;
-    color: black;
-    border-radius: 8px;
-    padding: 8px 14px;
-    text-align: center;
-    display: inline-block;
-    font-size: 18px;
-    font-family: "orienta";
-    margin: 22px 55px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-  }
-  
-  .btn-update-map:hover {
-      background-color: crimson ;
-      color: white;
-    }
+.filter label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-family: "orienta";
+}
+
+.filter select {
+  width: 100%;
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-family: "orienta";
+}
+
+.btn-update-map {
+  background-color: white;
+  border: 2px solid crimson;
+  color: black;
+  border-radius: 8px;
+  padding: 8px 14px;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  font-family: "orienta";
+  margin: 22px 55px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.btn-update-map:hover {
+  background-color: crimson;
+  color: white;
+}
 
 /* Map */
 
 /* Generic */
 
 .btn {
-    background-color: white; 
-    border: 2px solid crimson;
-    color: black;
-    border-radius: 8px;
-    padding: 6px 12px;
-    text-align: center;
-    display: inline-block;
-    font-size: 14px;
-    font-family: "orienta";
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-  
-.btn:hover {
-      background-color: crimson ;
-      color: white;
+  background-color: white;
+  border: 2px solid crimson;
+  color: black;
+  border-radius: 8px;
+  padding: 6px 12px;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  font-family: "orienta";
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 
-.DampCategoryTag {
-        background-color: lightblue; 
-        border-radius: 8px;
-        padding: 4px 6px;
-        text-align: center;
-        margin: 4px 2px;
+.btn:hover {
+  background-color: crimson;
+  color: white;
 }
-      
-.BinCategoryTag {
-          background-color: gold; 
-          border-radius: 8px;
-          padding: 4px 6px;
-          text-align: center;
-          margin: 4px 2px;
+
+.damp-category-tag {
+  background-color: lightblue;
+  border-radius: 8px;
+  padding: 4px 6px;
+  text-align: center;
+  margin: 4px 2px;
 }
-      
-.NeighbourCategoryTag {
-          background-color: orchid; 
-          border-radius: 8px;
-          padding: 4px 6px;
-          text-align: center;
-          margin: 4px 2px;
+
+.bin-category-tag {
+  background-color: gold;
+  border-radius: 8px;
+  padding: 4px 6px;
+  text-align: center;
+  margin: 4px 2px;
 }
-      
-.PositiveSentimentTag {
-          background-color: chartreuse; 
-          border-radius: 8px;
-          padding: 4px 6px;
-          text-align: center;
-          margin: 4px 2px;
+
+.neighbour-category-tag {
+  background-color: orchid;
+  border-radius: 8px;
+  padding: 4px 6px;
+  text-align: center;
+  margin: 4px 2px;
 }
-      
-.MildlyPositiveSentimentTag {
-          background-color: lightgreen; 
-          border-radius: 8px;
-          padding: 4px 6px;
-          text-align: center;
-          margin: 4px 2px;
+
+.positive-sentiment-tag {
+  background-color: chartreuse;
+  border-radius: 8px;
+  padding: 4px 6px;
+  text-align: center;
+  margin: 4px 2px;
 }
-      
-.NeutralSentimentTag {
-          background-color: coral; 
-          border-radius: 8px;
-          padding: 4px 6px;
-          text-align: center;
-          margin: 4px 2px;
+
+.mildly-positive-sentiment-tag {
+  background-color: lightgreen;
+  border-radius: 8px;
+  padding: 4px 6px;
+  text-align: center;
+  margin: 4px 2px;
 }
-      
-.MildlyNegativeSentimentTag {
-          background-color: orangered; 
-          border-radius: 8px;
-          padding: 4px 6px;
-          text-align: center;
-          margin: 4px 2px;
+
+.neutral-sentiment-tag {
+  background-color: coral;
+  border-radius: 8px;
+  padding: 4px 6px;
+  text-align: center;
+  margin: 4px 2px;
 }
-      
-.NegativeSentimentTag {
-          background-color: crimson; 
-          border-radius: 8px;
-          padding: 4px 6px;
-          text-align: center;
-          margin: 4px 2px;
+
+.mildly-negative-sentiment-tag {
+  background-color: orangered;
+  border-radius: 8px;
+  padding: 4px 6px;
+  text-align: center;
+  margin: 4px 2px;
+}
+
+.negative-sentiment-tag {
+  background-color: crimson;
+  border-radius: 8px;
+  padding: 4px 6px;
+  text-align: center;
+  margin: 4px 2px;
 }
 
 /* Actual Map */
 
 .leaflet-container {
-    width: 80vw;
+  width: 80vw;
 }
 
 /* Popup */
 
 .PopupRegularText {
-    font-family: "Orienta";
-    font-size: 13px;
+  font-family: "Orienta";
+  font-size: 13px;
 }
 
 .PopupTitleText {
-    font-family: "Orienta";
-    font-size: 14px;
+  font-family: "Orienta";
+  font-size: 14px;
 }
 
 /* Additional Info Box */
 
 .additional-info-box {
-    position: fixed;
-    top: 13.8vh;
-    right: 0;
-    width: 20vw;
-    height: 100%;
-    padding: 32px;
-    background-color: white;
-    z-index: 1000;
+  position: fixed;
+  top: 13.8vh;
+  right: 0;
+  width: 20vw;
+  height: 100%;
+  padding: 32px;
+  background-color: white;
+  z-index: 1000;
 }
 
 .AddInfoBoxRegularText {
-    font-family: "Orienta";
-    font-size: 14px;
+  font-family: "Orienta";
+  font-size: 14px;
 }
 
 .AddInfoBoxTitleText {
-    font-family: "Orienta";
-    font-size: 18px;
+  font-family: "Orienta";
+  font-size: 18px;
 }

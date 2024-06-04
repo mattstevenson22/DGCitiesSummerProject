@@ -17,7 +17,7 @@ export default function FilterBar( {setFilterSelection}) {
 
   return (
     <div className="filter-container">
-      <h2 className = 'filtertitle'>Filters</h2>
+      <h2 className = 'filter-title'>Filters</h2>
       <div className="filter">
         <label htmlFor="sentiment">Sentiment</label>
         <select id="sentiment" value={sentiment} onChange={(e) => setSentiment(e.target.value)}>
