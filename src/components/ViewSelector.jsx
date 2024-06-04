@@ -2,18 +2,29 @@ import NavBar from "./NavBar";
 import Map from "./Map";
 import Dashboard from "./Dashboard";
 import { useState } from "react";
+import FilterBar from "./FilterBar";
 
+export default function ViewSelector() {
 
-export default function ViewSelector( filterSelection) {
+  const [chosenView, setChosenView] = useState("dashboard");
 
-    const [chosenView, setChosenView] = useState("dash");
+  // state var to hold current filter selection
+  const [filterSelection, setFilterSelection] = useState("||||");
 
-    return (
-        <div className="navbarandmap">
-            <NavBar setChosenView = {setChosenView} />
-            {chosenView=="map" ? <Map filterSelection = {filterSelection} /> : <Dashboard /> }
+  return (
+    <div className="viewselector">
+
+      <NavBar setChosenView={setChosenView} />
+
+      {chosenView == "mapwithfilters" ? (
+        <div className="filterandmap-container">
+          <FilterBar setFilterSelection={setFilterSelection} />
+          <Map filterSelection={filterSelection} />
         </div>
-      
-    );
-  }
-  
+      ) : (
+        <Dashboard />
+      )}
+
+    </div>
+  );
+}

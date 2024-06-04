@@ -37,14 +37,95 @@ p {
     background-color: #f8f8f8; 
 }
 
-/* Main console section */
+/* View Selector Section */
 
-.main-console {
+.viewselector {
     display: flex;
+    flex-direction: column;
     flex-grow: 1;
 }
 
-/* Filter Bar section */
+.filterandmap-container {
+    display:flex;
+    height:100%
+}
+
+/* Navbar section */
+
+.navbar-container {
+    height: 7%;
+    width: 100vw;
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #f8f8f8;
+  }
+
+  li {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Orienta";
+  }
+  
+  li:hover {
+    background-color: #ddd;
+  }
+
+
+/* Dashboard */
+
+.dashboard-container {
+    height: 93%;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-rows: 50% 50%;
+}
+
+.dashtile {
+    font-family: "Orienta";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.totalComplaintsHeader {
+    font-size: 16px;
+}
+
+.totalComplaintsValue {
+    font-size: 64px;
+}
+
+.piechart-container {
+    height: 75%;
+    width: 75%;
+}
+
+.good {
+    color: chartreuse;
+    font-weight: bold;
+}
+
+.bad {
+    color: red;
+    font-weight: bold;
+}
+
+
+/* Map and Filters section */
+
+
+/* Filter Bar */
 
 .filtertitle {
     font-size: 20px;
@@ -110,41 +191,7 @@ p {
       color: white;
     }
 
-
-/* Navbar section */
-
-.navbarandmap {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.navbar-container {
-    height: 7%;
-}
-
-ul {
-    list-style-type: none;
-    overflow: hidden;
-    background-color: #f8f8f8;
-  }
-
-  li {
-    float: left;
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    cursor: pointer;
-    font-family: "Orienta";
-  }
-  
-  li:hover {
-    background-color: #ddd;
-  }
-
-
-/* Map section */
+/* Map */
 
 /* Generic */
 
@@ -235,7 +282,7 @@ ul {
 /* Actual Map */
 
 .leaflet-container {
-    height: 93%;
+    height: 100%;
     width: 80vw;
 }
 
@@ -273,72 +320,3 @@ ul {
     font-family: "Orienta";
     font-size: 18px;
 }
-
-/* Dashboard Stuff */
-
-.dashboard-container {
-    height: 93%;
-    width: 80vw;
-    display: grid;
-    grid-template-columns: 33.33% 33.33% 33.33%;
-    grid-template-rows: 50% 50%;
-}
-
-.dashtile {
-    font-family: "Orienta";
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 1px solid black;
-    text-align: center;
-}
-
-.totalComplaintsHeader {
-    font-size: 16px;
-}
-
-.totalComplaintsValue {
-    font-size: 64px;
-}
-
-.piechart-container {
-    height: 75%;
-    width: 75%;
-}
-
-.good {
-    color: chartreuse;
-    font-weight: bold;
-}
-
-.bad {
-    color: red;
-    font-weight: bold;
-}
-
-
-
-
-
-
-
-
-
-
-/* Legacy:
-
-.info-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-*/
