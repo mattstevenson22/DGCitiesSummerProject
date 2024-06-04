@@ -284,13 +284,14 @@ ul {
     grid-template-rows: 50% 50%;
 }
 
-.dashtile-1 {
+.dashtile {
     font-family: "Orienta";
-    border: 1px solid crimson;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border: 1px solid black;
+    text-align: center;
 }
 
 .totalComplaintsHeader {
@@ -301,52 +302,20 @@ ul {
     font-size: 64px;
 }
 
-.dashtile-2 {
-    font-family: "Orienta";
-    border: 1px solid crimson;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.piechart-container {
+    height: 75%;
+    width: 75%;
 }
 
-.dashtile-3 {
-    font-family: "Orienta";
-    border: 1px solid crimson;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.good {
+    color: chartreuse;
+    font-weight: bold;
 }
 
-.dashtile-4 {
-    font-family: "Orienta";
-    border: 1px solid crimson;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.bad {
+    color: red;
+    font-weight: bold;
 }
-
-.dashtile-5 {
-    font-family: "Orienta";
-    border: 1px solid crimson;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.dashtile-6 {
-    font-family: "Orienta";
-    border: 1px solid crimson;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-
 
 
 
