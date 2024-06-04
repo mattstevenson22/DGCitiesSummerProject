@@ -135,11 +135,11 @@ export default function Map( {filterSelection} ){
         let correctCategoryColour;
 
         if ( complaint.category == "Damp" ) {
-          correctCategoryColour = "DampCategoryTag";
+          correctCategoryColour = "damp-category-tag";
         } else if (complaint.category == "Bins") {
-          correctCategoryColour = "BinCategoryTag";
+          correctCategoryColour = "bin-category-tag";
         } else {
-          correctCategoryColour = "NeighbourCategoryTag";
+          correctCategoryColour = "neighbour-category-tag";
         }
         
         // choose correct sentiment styling
@@ -147,15 +147,15 @@ export default function Map( {filterSelection} ){
         let correctSentimentColour;
 
         if ( complaint.sentiment == "5" ) {
-          correctSentimentColour = "NegativeSentimentTag";
+          correctSentimentColour = "negative-sentiment-tag";
         } else if (complaint.sentiment == "4") {
-          correctSentimentColour = "MildlyNegativeSentimentTag";
+          correctSentimentColour = "mildly-negative-sentiment-tag";
         } else if (complaint.sentiment == "3") {
-          correctSentimentColour = "NeutralSentimentTag";
+          correctSentimentColour = "neutral-sentiment-tag";
         } else if (complaint.sentiment == "2") {
-          correctSentimentColour = "MildlyPositiveSentimentTag";
+          correctSentimentColour = "mildly-positive-sentiment-tag";
         } else {
-          correctSentimentColour = "PositiveSentimentTag";
+          correctSentimentColour = "positive-sentiment-tag";
         }
 
         complaint_markers.push({
