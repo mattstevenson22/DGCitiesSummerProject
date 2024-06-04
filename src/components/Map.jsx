@@ -174,22 +174,22 @@ export default function Map( {filterSelection} ){
 
   return (
     <>
-    <MapContainer center={[51.476852, 0.015]} zoom={13.5}>
+      <MapContainer center={[51.476852, 0.015]} zoom={13.5}>
 
-      <TileLayer
-        attribution='&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url='https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png' />
+        <TileLayer
+          attribution='&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url='https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png' />
 
-      
-      <MarkerClusterGroup maxClusterRadius={30} chunkedLoading> 
+        
+        <MarkerClusterGroup maxClusterRadius={30} chunkedLoading> 
 
-        <Markers data={complaint_markers} />
+          <Markers data={complaint_markers} />
 
-      </MarkerClusterGroup>
+        </MarkerClusterGroup>
 
-    </MapContainer>
+      </MapContainer>
 
-    <InfoPopup trigger={buttonPopup} setTrigger={setButtonPopup} currentComplaintKey={currentComplaintKey} />
+      <InfoPopup trigger={buttonPopup} setTrigger={setButtonPopup} currentComplaintKey={currentComplaintKey} />
     </>
   );
 }

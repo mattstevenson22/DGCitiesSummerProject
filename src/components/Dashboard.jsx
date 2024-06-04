@@ -46,12 +46,6 @@ export default function Dashboard() {
     }
 
 
-
-
-
-
-
-
     return (
       <div className="dashboard-container">
 
@@ -69,9 +63,9 @@ export default function Dashboard() {
 
         <div className="dashtile"> 
           <p> Category with the <span className="bad"> most </span> complaints in prev. month: </p>
-          <p> INSERT CATGEORY </p>
+          <p> Damp </p>
           <p> Category with the <span className="good"> least </span> complaints in prev. month: </p>
-          <p> INSERT CATGEORY </p>
+          <p> Parks </p>
         </div>
 
         <div className="dashtile">
@@ -83,14 +77,14 @@ export default function Dashboard() {
 
         <div className="dashtile">
           <p> Area with the <span className="bad"> most </span> complaints in prev. month: </p>
-          <p>  </p>
+          <p> Woolwich </p>
           <p> Area with the <span className="good"> least </span> complaints in prev. month: </p>
-          <p> INSERT AREA </p>
+          <p> Blackheath </p>
         </div>
 
         <div className="dashtile">
            <p> Number of complaints resolved in prev. month, relative to past months: </p>
-           <p> INSERT BAR CHART </p>
+           <p> i'm a bar chart </p>
         </div>
 
 

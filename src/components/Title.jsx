@@ -1,7 +1,5 @@
 export default function Title() {
   return (
-    <>
-      <h1 className="title"> Greenwich Complaints Portal </h1>
-    </>
+      <p className="title"> Greenwich Complaints Portal </p>
   );
 }
