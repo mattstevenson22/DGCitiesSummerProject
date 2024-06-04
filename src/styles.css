@@ -48,22 +48,20 @@ p {
 
 .filterandmap-container {
     width:100vw;
-    height:93%;
+    height:100%;
     display:flex;
 }
 
 /* Navbar section */
 
 .navbar-container {
-    height: 7%;
     width: 100%;
+    border-bottom: 2px solid crimson;
+    background-color: #f8f8f8;
 }
 
 ul {
     list-style-type: none;
-    overflow: hidden;
-    background-color: #f8f8f8;
-    border-bottom: 2px solid red;
   }
 
   li {
@@ -84,7 +82,7 @@ ul {
 /* Dashboard */
 
 .dashboard-container {
-    height: 93%;
+    height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: 33.33% 33.33% 33.33%;
@@ -110,8 +108,8 @@ ul {
 }
 
 .piechart-container {
-    height: 75%;
-    width: 75%;
+    height: 65%;
+    width: 65%;
 }
 
 .good {
