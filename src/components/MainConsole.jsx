@@ -5,7 +5,6 @@ import { useState } from "react";
 import FilterBar from "./FilterBar";
 
 export default function MainConsole() {
-
   // state var to hold current chosen view
   const [chosenView, setChosenView] = useState("dashboard");
 
@@ -14,7 +13,6 @@ export default function MainConsole() {
 
   return (
     <div className="main-console">
-
       <NavBar setChosenView={setChosenView} />
 
       {chosenView == "mapwithfilters" ? (
@@ -25,7 +23,6 @@ export default function MainConsole() {
       ) : (
         <Dashboard />
       )}
-
     </div>
   );
 }

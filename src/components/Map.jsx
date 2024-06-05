@@ -129,40 +129,32 @@ export default function Map({ filterSelection }) {
 
     return props.trigger ? (
       <div className="additional-info-box">
-        <h3 className="AddInfoBoxTitleText"> {complaint_info.address} </h3>
-        <p className="AddInfoBoxRegularText">
-          {" "}
-          Category:{" "}
+        <h3 className="add-info-box-title-text"> {complaint_info.address} </h3>
+        <p className="add-info-box-regular-text">
+          Category:
           <span className={getCorrectCategoryStyling(complaint_info.category)}>
-            {" "}
-            {complaint_info.category}{" "}
-          </span>{" "}
+            {complaint_info.category}
+          </span>
         </p>
-        <p className="AddInfoBoxRegularText">
-          {" "}
-          Full Complaint: {complaint_info.full_complaint}{" "}
+        <p className="add-info-box-regular-text">
+          Full Complaint: {complaint_info.full_complaint}
         </p>
-        <p className="AddInfoBoxRegularText">
-          {" "}
-          Date: {complaint_info.timestamp}{" "}
+        <p className="add-info-box-regular-text">
+          Date: {complaint_info.timestamp}
         </p>
-        <p className="AddInfoBoxRegularText">
-          {" "}
-          &#129668; Sentiment:{" "}
+        <p className="add-info-box-regular-text">
+          &#129668; Sentiment:
           <span
             className={getCorrectSentimentStyling(complaint_info.sentiment)}
           >
-            {" "}
-            {complaint_info.sentiment}{" "}
-          </span>{" "}
+            {complaint_info.sentiment}
+          </span>
         </p>
-        <p className="AddInfoBoxRegularText">
-          {" "}
-          Email Address: {complaint_info.email}{" "}
+        <p className="add-info-box-regular-text">
+          Email Address: {complaint_info.email}
         </p>
-        <p className="AddInfoBoxRegularText">
-          {" "}
-          Telephone: {complaint_info.telephone}{" "}
+        <p className="add-info-box-regular-text">
+          Telephone: {complaint_info.telephone}
         </p>
         <button className="btn" onClick={() => props.setTrigger(false)}>
           Close
@@ -213,28 +205,22 @@ export default function Map({ filterSelection }) {
         geocode: complaint.geocode,
         popUp: (
           <>
-            {" "}
-            <h4 className="PopupTitleText"> {complaint.address} </h4>{" "}
-            <p className="PopupRegularText">
-              {" "}
-              Category:{" "}
+            <h4 className="popup-title-text"> {complaint.address} </h4>
+            <p className="popup-regular-text">
+              Category:
               <span className={correctCategoryColour}>
-                {" "}
-                {complaint.category}{" "}
-              </span>{" "}
-            </p>{" "}
-            <p className="PopupRegularText">
-              {" "}
-              &#129668; Summary: {complaint.summary}{" "}
-            </p>{" "}
-            <p className="PopupRegularText">
-              {" "}
-              &#129668; Urgency:{" "}
+                {complaint.category}
+              </span>
+            </p>
+            <p className="popup-regular-text">
+              &#129668; Summary: {complaint.summary}
+            </p>
+            <p className="popup-regular-text">
+              &#129668; Urgency:
               <span className={correctSentimentColour}>
-                {" "}
-                {complaint.sentiment}{" "}
-              </span>{" "}
-            </p>{" "}
+                {complaint.sentiment}
+              </span>
+            </p>
             <button
               className="btn"
               onClick={() => {
@@ -242,9 +228,8 @@ export default function Map({ filterSelection }) {
                 setButtonPopup(true);
               }}
             >
-              {" "}
-              See more{" "}
-            </button>{" "}
+              See more
+            </button>
           </>
         ),
       });

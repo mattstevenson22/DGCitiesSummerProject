@@ -300,12 +300,12 @@ li:hover {
 
 /* Popup */
 
-.PopupRegularText {
+.popup-regular-text {
   font-family: "Orienta";
   font-size: 13px;
 }
 
-.PopupTitleText {
+.popup-title-text {
   font-family: "Orienta";
   font-size: 14px;
 }
@@ -323,12 +323,12 @@ li:hover {
   z-index: 1000;
 }
 
-.AddInfoBoxRegularText {
+.add-info-box-regular-text {
   font-family: "Orienta";
   font-size: 14px;
 }
 
-.AddInfoBoxTitleText {
+.add-info-box-title-text {
   font-family: "Orienta";
   font-size: 18px;
 }

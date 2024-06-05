@@ -1,5 +1,7 @@
 export default function Title() {
   return (
-      <p className="title"> Greenwich Complaints Portal </p>
+    <p className="title">
+      Greenwich Complaints Portal (Dummy/Example/Fake Data)
+    </p>
   );
 }

@@ -1,10 +1,29 @@
 import CountUp from "react-countup";
 import { Pie, Line } from "react-chartjs-2";
-import { Chart as ChartJS, Tooltip, Legend, ArcElement, CategoryScale, LinearScale, PointElement, LineElement, Title } from "chart.js";
+import {
+  Chart as ChartJS,
+  Tooltip,
+  Legend,
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+} from "chart.js";
 import { useEffect, useState } from "react";
 import api from "../api/backendapi";
 
-ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale, LinearScale, PointElement, LineElement);
+ChartJS.register(
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement
+);
 
 export default function Dashboard() {
   const [dashboardJson, setDashboardJson] = useState({});
@@ -64,13 +83,7 @@ export default function Dashboard() {
   };
 
   let resolutionLineChartData = {
-    labels: [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May"
-    ],
+    labels: ["January", "February", "March", "April", "May"],
     datasets: [
       {
         label: "Complaints Resolved",
@@ -79,16 +92,6 @@ export default function Dashboard() {
       },
     ],
   };
-
-
-
-
-
-
-
-
-
-
 
   const options = {
     maintainAspectRatio: false,
@@ -131,8 +134,8 @@ export default function Dashboard() {
 
       <div className="dashboard-tile">
         <p>
-          Area with <span className="bad"> most </span> complaints in the previous
-          week:
+          Area with <span className="bad"> most </span> complaints in the
+          previous week:
         </p>
         <p> {area_most} </p>
         <p>
@@ -144,7 +147,8 @@ export default function Dashboard() {
 
       <div className="dashboard-tile2">
         <p>
-          Number of complaints resolved in previous month, relative to past months:
+          Number of complaints resolved in previous month, relative to past
+          months:
         </p>
         <div className="linechart-container">
           <Line data={resolutionLineChartData} options={options} />
