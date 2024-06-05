@@ -348,5 +348,15 @@
             "summary": "Street lights on Greenwich High Rd are too bright.",
             "sentiment": "3"
         }
+    },
+    "dashboard": {
+        "total_complaints": 1485,
+        "catPCdata": [60,40,20],
+        "cat_most": "Damp",
+        "cat_least": "parks",
+        "areaPCdata": [100,10,40],
+        "area_most": "Woolwich",
+        "area_least": "Blackheath",
+        "resolution_data": "barchart"
     }
 }
