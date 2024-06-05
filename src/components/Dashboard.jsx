@@ -111,19 +111,19 @@ export default function Dashboard() {
 
       <div className="dashboard-tile">
         <p>
-          Category with the <span className="bad"> most </span> complaints in
-          prev. week:
+          Category with <span className="bad"> most </span> complaints in the
+          previous week:
         </p>
         <p> {cat_most} </p>
         <p>
-          Category with the <span className="good"> least </span> complaints in
-          prev. week:
+          Category with <span className="good"> least </span> complaints in the
+          previous week:
         </p>
         <p> {cat_least} </p>
       </div>
 
       <div className="dashboard-tile2">
-        <p> Complaints by Area: </p>
+        <p> Total Number of Complaints by Area: </p>
         <div className="piechart-container">
           <Pie data={areaPieChartData} options={options} />
         </div>
@@ -131,20 +131,20 @@ export default function Dashboard() {
 
       <div className="dashboard-tile">
         <p>
-          Area with the <span className="bad"> most </span> complaints in prev.
+          Area with <span className="bad"> most </span> complaints in the previous
           week:
         </p>
         <p> {area_most} </p>
         <p>
-          Area with the <span className="good"> least </span> complaints in
-          prev. week:
+          Area with <span className="good"> least </span> complaints in the
+          previous week:
         </p>
         <p> {area_least} </p>
       </div>
 
       <div className="dashboard-tile2">
         <p>
-          Number of complaints resolved in prev. month, relative to past months:
+          Number of complaints resolved in previous month, relative to past months:
         </p>
         <div className="linechart-container">
           <Line data={resolutionLineChartData} options={options} />
