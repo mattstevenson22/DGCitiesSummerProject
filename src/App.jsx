@@ -5,9 +5,7 @@ import "./styles.css";
 import MainConsole from "./components/MainConsole.jsx";
 import Title from "./components/Title.jsx";
 
-
-
-export default function App(){
+export default function App() {
   return (
     <>
       <Title />
