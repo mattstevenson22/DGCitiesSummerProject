@@ -357,6 +357,6 @@
         "areaPCdata": [100,10,40],
         "area_most": "Woolwich",
         "area_least": "Blackheath",
-        "resolution_data": "barchart"
+        "resolution_data": [700,900,200,400,1100]
     }
 }

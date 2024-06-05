@@ -122,6 +122,11 @@ li:hover {
   width: 65%;
 }
 
+.linechart-container {
+  height: 65%;
+  width: 65%;
+}
+
 .good {
   color: chartreuse;
   font-weight: bold;
