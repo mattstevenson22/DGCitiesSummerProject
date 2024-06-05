@@ -353,10 +353,10 @@
         "total_complaints": 1485,
         "catPCdata": [60,40,20],
         "cat_most": "Damp",
-        "cat_least": "parks",
+        "cat_least": "Parks",
         "areaPCdata": [100,10,40],
         "area_most": "Woolwich",
         "area_least": "Blackheath",
-        "resolution_data": [700,900,200,400,1100]
+        "resolution_data": [700,901,624,544,791]
     }
 }

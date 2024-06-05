@@ -32,10 +32,10 @@ export default function Dashboard() {
   let resolution_data = dashboardJson.resolution_data;
 
   let categoryPieChartData = {
-    labels: ["Category 1", "Category 2", "Category 3"],
+    labels: ["Parks", "Bin Collection", "Damp and Mould"],
     datasets: [
       {
-        label: "Complaints by Category",
+        label: "Complaints",
         data: catPCdata,
         backgroundColor: [
           "rgba(255,99,132,1)",
@@ -48,10 +48,10 @@ export default function Dashboard() {
   };
 
   let areaPieChartData = {
-    labels: ["Area 1", "Area 2", "Area 3"],
+    labels: ["Woolwich", "Charlton", "Blackheath"],
     datasets: [
       {
-        label: "Complaints by Area",
+        label: "Complaints",
         data: areaPCdata,
         backgroundColor: [
           "rgba(255,99,132,1)",
@@ -103,7 +103,7 @@ export default function Dashboard() {
       </div>
 
       <div className="dashboard-tile">
-        <p> Complaints by Category: </p>
+        <p> Total Number of Complaints by Category: </p>
         <div className="piechart-container">
           <Pie data={categoryPieChartData} options={options} />
         </div>
@@ -112,12 +112,12 @@ export default function Dashboard() {
       <div className="dashboard-tile">
         <p>
           Category with the <span className="bad"> most </span> complaints in
-          prev. month:
+          prev. week:
         </p>
         <p> {cat_most} </p>
         <p>
           Category with the <span className="good"> least </span> complaints in
-          prev. month:
+          prev. week:
         </p>
         <p> {cat_least} </p>
       </div>
@@ -132,12 +132,12 @@ export default function Dashboard() {
       <div className="dashboard-tile">
         <p>
           Area with the <span className="bad"> most </span> complaints in prev.
-          month:
+          week:
         </p>
         <p> {area_most} </p>
         <p>
           Area with the <span className="good"> least </span> complaints in
-          prev. month:
+          prev. week:
         </p>
         <p> {area_least} </p>
       </div>
