@@ -84,9 +84,12 @@ li:hover {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: 33.33% 33.33% 33.33%;
-  grid-template-rows: 50% 50%;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: 45% 45%;
   background-color: #f8f8f8;
+  gap: 2%;
+  align-content: center;
+  justify-content: center;
 }
 
 .dashboard-tile {
@@ -97,17 +100,21 @@ li:hover {
   flex-direction: column;
   /* border: 1px solid black; */
   text-align: center;
+  border-radius: 15px;
+  background-color: white;
 }
 
 .dashboard-tile2 {
-    font-family: "Orienta";
-    display: flex;
-    /* justify-content: center; */ /* removed vertical centering */
-    align-items: center;
-    flex-direction: column;
-    /* border: 1px solid black; */
-    text-align: center;
-  }
+  font-family: "Orienta";
+  display: flex;
+  /* justify-content: center; */ /* removed vertical centering */
+  align-items: center;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  text-align: center;
+  border-radius: 15px;
+  background-color: white;
+}
 
 .total-complaints-header {
   font-size: 16px;
