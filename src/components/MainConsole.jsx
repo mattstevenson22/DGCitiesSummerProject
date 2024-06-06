@@ -1,12 +1,12 @@
 import NavBar from "./NavBar";
 import Map from "./Map";
-import Dashboard from "./Dashboard";
+// import Dashboard from "./Dashboard";
 import { useState } from "react";
 import FilterBar from "./FilterBar";
 
 export default function MainConsole() {
   // state var to hold current chosen view
-  const [chosenView, setChosenView] = useState("dashboard");
+  const [chosenView, setChosenView] = useState("mapwithfilters");
 
   // state var to hold current filter selection
   const [filterSelection, setFilterSelection] = useState("||||");
@@ -21,7 +21,8 @@ export default function MainConsole() {
           <Map filterSelection={filterSelection} />
         </div>
       ) : (
-        <Dashboard />
+        // <Dashboard />
+        <h1>hello</h1>
       )}
     </div>
   );

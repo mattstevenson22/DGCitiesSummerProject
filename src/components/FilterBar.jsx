@@ -35,19 +35,6 @@ export default function FilterBar({ setFilterSelection }) {
         </select>
       </div>
       <div className="filter">
-        <label htmlFor="progress">Progress</label>
-        <select
-          id="progress"
-          value={progress}
-          onChange={(e) => setProgress(e.target.value)}
-        >
-          <option value="">Select</option>
-          <option value="notStarted">Not Started</option>
-          <option value="inProgress">In Progress</option>
-          <option value="completed">Completed</option>
-        </select>
-      </div>
-      <div className="filter">
         <label htmlFor="category">Category</label>
         <select
           id="category"
@@ -61,6 +48,34 @@ export default function FilterBar({ setFilterSelection }) {
         </select>
       </div>
       <div className="filter">
+        <label htmlFor="age">Age</label>
+        <select id="age" value={age} onChange={(e) => setAge(e.target.value)}>
+          <option value="">Select</option>
+          <option value="7">Previous 7 Days</option>
+          <option value="30">Previous 30 Days</option>
+          <option value="365">Previous Year</option>
+        </select>
+      </div>
+      <button className="btn-update-map" onClick={updateMap}>
+        Update Map
+      </button>
+    </div>
+
+    /* <div className="filter">
+        <label htmlFor="progress">Progress</label>
+        <select
+          id="progress"
+          value={progress}
+          onChange={(e) => setProgress(e.target.value)}
+        >
+          <option value="">Select</option>
+          <option value="notStarted">Not Started</option>
+          <option value="inProgress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div> */
+
+    /* <div className="filter">
         <label htmlFor="actionedBy">Actioned By</label>
         <select
           id="actionedBy"
@@ -72,19 +87,6 @@ export default function FilterBar({ setFilterSelection }) {
           <option value="team2">Team 2</option>
           <option value="team3">Team 3</option>
         </select>
-      </div>
-      <div className="filter">
-        <label htmlFor="age">Age</label>
-        <select id="age" value={age} onChange={(e) => setAge(e.target.value)}>
-          <option value="">Select</option>
-          <option value="new">New</option>
-          <option value="mid">Mid</option>
-          <option value="old">Old</option>
-        </select>
-      </div>
-      <button className="btn-update-map" onClick={updateMap}>
-        Update Map
-      </button>
-    </div>
+      </div> */
   );
 }

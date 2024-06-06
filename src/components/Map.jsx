@@ -68,6 +68,7 @@ export default function Map({ filterSelection }) {
             age
         );
         setComplaintsJson(response.data);
+        console.log(response.data);
       } catch (err) {
         console.log("Unsuccessful Request");
       }
@@ -104,8 +105,8 @@ export default function Map({ filterSelection }) {
     let complaint_info = complaintsJson[props.currentComplaintKey];
 
     function getCorrectCategoryStyling(category) {
-      if (category == "Damp") {
-        return "damp-category-tag";
+      if (category == "Business") {
+        return "business-category-tag";
       } else if (category == "Bins") {
         return "bin-category-tag";
       } else {
@@ -176,8 +177,8 @@ export default function Map({ filterSelection }) {
 
       let correctCategoryColour;
 
-      if (complaint.category == "Damp") {
-        correctCategoryColour = "damp-category-tag";
+      if (complaint.category == "Business") {
+        correctCategoryColour = "business-category-tag";
       } else if (complaint.category == "Bins") {
         correctCategoryColour = "bin-category-tag";
       } else {
