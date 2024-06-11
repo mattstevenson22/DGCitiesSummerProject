@@ -10,6 +10,7 @@ import MarkerClusterGroup from "react-leaflet-cluster";
 import pin from "../images/red-pin.png";
 import { useEffect, useState } from "react";
 import api from "../api/backendapi";
+import "./SmoothWheelZoom";
 
 export default function Map({ filterSelection }) {
   // ----- 1: Setup -----
@@ -241,7 +242,7 @@ export default function Map({ filterSelection }) {
 
   return (
     <>
-      <MapContainer center={[51.476852, 0.015]} zoom={13.5}>
+      <MapContainer center={[51.476852, 0.015]} zoom={13.5}  scrollWheelZoom={false} smoothWheelZoom={true} smoothSensitivity={1} >
         <TileLayer
           attribution='&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png"
