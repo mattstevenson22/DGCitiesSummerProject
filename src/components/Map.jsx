@@ -114,17 +114,17 @@ export default function Map({ filterSelection }) {
       }
     }
 
-    function getCorrectSentimentStyling(sentiment) {
-      if (sentiment == "5") {
-        return "negative-sentiment-tag";
-      } else if (sentiment == "4") {
-        return "mildly-negative-sentiment-tag";
-      } else if (sentiment == "3") {
-        return "neutral-sentiment-tag";
-      } else if (sentiment == "2") {
-        return "mildly-positive-sentiment-tag";
+    function getCorrectUrgencyStyling(urgency) {
+      if (urgency == "5") {
+        return "urgency-5-tag";
+      } else if (urgency == "4") {
+        return "urgency-4-tag";
+      } else if (urgency == "3") {
+        return "urgency-3-tag";
+      } else if (urgency == "2") {
+        return "urgency-2-tag";
       } else {
-        return "positive-sentiment-tag";
+        return "urgency-1-tag";
       }
     }
 
@@ -144,9 +144,9 @@ export default function Map({ filterSelection }) {
           Date: {complaint_info.timestamp}
         </p>
         <p className="add-info-box-regular-text">
-          &#129668; Sentiment:
+          &#129668; Urgency:
           <span
-            className={getCorrectSentimentStyling(complaint_info.sentiment)}
+            className={getCorrectUrgencyStyling(complaint_info.sentiment)}
           >
             {complaint_info.sentiment}
           </span>
@@ -185,20 +185,20 @@ export default function Map({ filterSelection }) {
         correctCategoryColour = "neighbour-category-tag";
       }
 
-      // choose correct sentiment styling
+      // choose correct urgency styling
 
-      let correctSentimentColour;
+      let correctUrgencyColour;
 
       if (complaint.sentiment == "5") {
-        correctSentimentColour = "negative-sentiment-tag";
+        correctUrgencyColour = "urgency-5-tag";
       } else if (complaint.sentiment == "4") {
-        correctSentimentColour = "mildly-negative-sentiment-tag";
+        correctUrgencyColour = "urgency-4-tag";
       } else if (complaint.sentiment == "3") {
-        correctSentimentColour = "neutral-sentiment-tag";
+        correctUrgencyColour = "urgency-3-tag";
       } else if (complaint.sentiment == "2") {
-        correctSentimentColour = "mildly-positive-sentiment-tag";
+        correctUrgencyColour = "urgency-2-tag";
       } else {
-        correctSentimentColour = "positive-sentiment-tag";
+        correctUrgencyColour = "urgency-1-tag";
       }
 
       complaint_markers.push({
@@ -218,7 +218,7 @@ export default function Map({ filterSelection }) {
             </p>
             <p className="popup-regular-text">
               &#129668; Urgency:
-              <span className={correctSentimentColour}>
+              <span className={correctUrgencyColour}>
                 {complaint.sentiment}
               </span>
             </p>
