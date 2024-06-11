@@ -31,8 +31,8 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const res = await api.get("/dashboard");
-        console.log("Sending api request: /dashboard");
+        const res = await api.get("/analytics");
+        console.log("Sending api request: /analytics");
         setDashboardJson(res.data);
       } catch (err) {
         console.log("Unsuccessful Request");
@@ -45,13 +45,14 @@ export default function Dashboard() {
   let catPCdata = dashboardJson.catPCdata;
   let cat_most = dashboardJson.cat_most;
   let cat_least = dashboardJson.cat_least;
-  let areaPCdata = dashboardJson.areaPCdata;
-  let area_most = dashboardJson.area_most;
-  let area_least = dashboardJson.area_least;
-  let resolution_data = dashboardJson.resolution_data;
+
+  let areaPCdata = [100,10,40];
+  let area_most = "Woolwich";
+  let area_least = "Blackheath";
+  let resolution_data = [700,901,624,544,791];
 
   let categoryPieChartData = {
-    labels: ["Parks", "Bin Collection", "Damp and Mould"],
+    labels: ["Adult Social Care", "Business", "Children's Services"],
     datasets: [
       {
         label: "Complaints",

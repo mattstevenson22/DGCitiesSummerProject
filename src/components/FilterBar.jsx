@@ -42,9 +42,9 @@ export default function FilterBar({ setFilterSelection }) {
           onChange={(e) => setCategory(e.target.value)}
         >
           <option value="">Select</option>
-          <option value="adultSocialCare">Adult Social Care</option>
-          <option value="business">Business</option>
-          <option value="childrensServices">Childrens Services</option>
+          <option value="Adult Social Care">Adult Social Care</option>
+          <option value="Business">Business</option>
+          <option value="Children's Services">Children's Services</option>
         </select>
       </div>
       <div className="filter">

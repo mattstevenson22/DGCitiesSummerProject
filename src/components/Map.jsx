@@ -133,7 +133,7 @@ export default function Map({ filterSelection }) {
       <div className="additional-info-box">
         <h3 className="add-info-box-title-text"> {complaint_info.address} </h3>
         <p className="add-info-box-regular-text">
-          Category:
+          &#129668; Category:
           <span className={getCorrectCategoryStyling(complaint_info.category)}>
             {complaint_info.category}
           </span>
@@ -209,7 +209,7 @@ export default function Map({ filterSelection }) {
           <>
             <h4 className="popup-title-text"> {complaint.address} </h4>
             <p className="popup-regular-text">
-              Category:
+              &#129668; Category:
               <span className={correctCategoryColour}>
                 {complaint.category}
               </span>
