@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export default function FilterBar({ setFilterSelection }) {
   // State hooks for each filter
-  const [sentiment, setSentiment] = useState("");
+  const [urgency, setUrgency] = useState("");
   const [progress, setProgress] = useState("");
   const [category, setCategory] = useState("");
   const [actionedBy, setActionedBy] = useState("");
@@ -10,9 +10,9 @@ export default function FilterBar({ setFilterSelection }) {
 
   const updateMap = () => {
     console.log("Updating map with filters:");
-    console.log({ sentiment, progress, category, actionedBy, age });
+    console.log({ urgency, progress, category, actionedBy, age });
     setFilterSelection(
-      sentiment + "|" + progress + "|" + category + "|" + actionedBy + "|" + age
+      urgency + "|" + progress + "|" + category + "|" + actionedBy + "|" + age
     );
   };
 
@@ -23,8 +23,8 @@ export default function FilterBar({ setFilterSelection }) {
         <label htmlFor="urgency">Urgency</label>
         <select
           id="urgency"
-          value={sentiment}
-          onChange={(e) => setSentiment(e.target.value)}
+          value={urgency}
+          onChange={(e) => setUrgency(e.target.value)}
         >
           <option value="">Select</option>
           <option value="5">5 (Most Urgent) </option>
