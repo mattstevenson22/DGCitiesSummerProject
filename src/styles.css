@@ -235,7 +235,7 @@ li:hover {
   color: white;
 }
 
-.business-category-tag {
+.asc-category-tag {
   background-color: lightblue;
   border-radius: 8px;
   padding: 4px 6px;
@@ -243,7 +243,7 @@ li:hover {
   margin: 6px;
 }
 
-.bin-category-tag {
+.business-category-tag {
   background-color: gold;
   border-radius: 8px;
   padding: 4px 6px;
@@ -251,7 +251,7 @@ li:hover {
   margin: 6px;
 }
 
-.neighbour-category-tag {
+.childrens-category-tag {
   background-color: orchid;
   border-radius: 8px;
   padding: 4px 6px;
@@ -321,7 +321,6 @@ li:hover {
 
 .additional-info-box {
   position: fixed;
-  top: 13.8vh;
   right: 0;
   width: 20vw;
   height: 100%;

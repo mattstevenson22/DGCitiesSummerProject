@@ -106,12 +106,12 @@ export default function Map({ filterSelection }) {
     let complaint_info = complaintsJson[props.currentComplaintKey];
 
     function getCorrectCategoryStyling(category) {
-      if (category == "Business") {
+      if (category == "Adult Social Care") {
+        return "asc-category-tag";
+      } else if (category == "Business") {
         return "business-category-tag";
-      } else if (category == "Bins") {
-        return "bin-category-tag";
       } else {
-        return "neighbour-category-tag";
+        return "childrens-category-tag";
       }
     }
 
@@ -178,12 +178,12 @@ export default function Map({ filterSelection }) {
 
       let correctCategoryColour;
 
-      if (complaint.category == "Business") {
+      if (complaint.category == "Adult Social Care") {
+        correctCategoryColour = "asc-category-tag";
+      } else if (complaint.category == "Business") {
         correctCategoryColour = "business-category-tag";
-      } else if (complaint.category == "Bins") {
-        correctCategoryColour = "bin-category-tag";
       } else {
-        correctCategoryColour = "neighbour-category-tag";
+        correctCategoryColour = "childrens-category-tag";
       }
 
       // choose correct urgency styling
@@ -252,13 +252,13 @@ export default function Map({ filterSelection }) {
         <MarkerClusterGroup maxClusterRadius={30} chunkedLoading>
           <Markers data={complaint_markers} />
         </MarkerClusterGroup>
-      </MapContainer>
 
-      <InfoPopup
+        <InfoPopup
         trigger={buttonPopup}
         setTrigger={setButtonPopup}
         currentComplaintKey={currentComplaintKey}
       />
+      </MapContainer>
     </>
   );
 }
