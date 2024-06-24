@@ -10,7 +10,7 @@ import MarkerClusterGroup from "react-leaflet-cluster";
 import pin from "../images/red-pin.png";
 import { useEffect, useState } from "react";
 import api from "../api/backendapi";
-import "./SmoothWheelZoom";
+import "../misc/SmoothWheelZoom";
 
 export default function Map({ filterSelection }) {
   // ----- 1: Setup -----
