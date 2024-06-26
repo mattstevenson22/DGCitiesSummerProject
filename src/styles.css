@@ -48,7 +48,7 @@ p {
 
 .filterandmap-container {
   width: 100vw;
-  height: 100%;
+  flex-grow: 1;
   display: flex;
 }
 
@@ -81,7 +81,7 @@ li:hover {
 /* Dashboard */
 
 .dashboard-container {
-  height: 100%;
+  flex-grow: 1;
   width: 100%;
   display: grid;
   grid-template-columns: 30% 30% 30%;
@@ -303,6 +303,7 @@ li:hover {
 
 .leaflet-container {
   width: 80vw;
+  height: 100%;
 }
 
 /* Popup */
@@ -323,7 +324,7 @@ li:hover {
   position: fixed;
   right: 0;
   width: 20vw;
-  max-height: 90%;
+  height: 87%;
   padding: 32px;
   background-color: white;
   z-index: 1000;
